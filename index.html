@@ -1,908 +1,638 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Homelytics | Independent Real Estate Reports</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Chart.js for anonymized market trends -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617',
-                        },
-                        emerald: {
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homelytics | Pre-Token Property Price Intelligence & Negotiation Dossiers</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Never pay a token amount blind. Access verified closed transaction benchmarks, floor-rise examinations, and litigation checks for your target building across Pune & Mumbai.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            teal: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e'
             }
+          }
         }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* Touch & Mobile Optimizations */
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
-            touch-action: manipulation;
-        }
-        .glass-panel {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-panel-light {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(226, 232, 240, 0.9);
-        }
-        .glow-emerald {
-            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.2);
-        }
-        .custom-scroll::-webkit-scrollbar {
-            width: 4px;
-        }
-        .custom-scroll::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.6);
-        }
-        .custom-scroll::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        /* Mobile Touch Target Standards */
-        .touch-target {
-            min-height: 48px;
-            min-width: 48px;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
 </head>
-<body class="bg-navy-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-white pb-20 md:pb-0">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-600 selection:text-white">
 
-    <!-- TOP ANNOUNCEMENT BANNER -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-[11px] sm:text-xs py-2 px-3 text-center font-medium flex items-center justify-center gap-1.5 leading-tight">
-        <i data-lucide="shield-check" class="w-3.5 h-3.5 shrink-0"></i>
-        <span>Data-backed real estate project reports & pricing insights for homebuyers.</span>
-        <a href="#sample-report" class="underline hover:text-slate-200 font-bold ml-1 hidden sm:inline">View Sample Layout &rarr;</a>
+  <!-- ================= TOP NOTICE BAR ================= -->
+  <div class="bg-slate-900 text-slate-300 px-4 py-2 text-xs md:text-sm text-center border-b border-slate-800 flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 animate-pulse">Live</span>
+    <span>Pune &amp; Mumbai Registry Benchmark Network Active. Don't sign your token without verifying closed rates.</span>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-700 to-slate-900 flex items-center justify-center text-white shadow-md shadow-teal-800/20">
+            <i data-lucide="building-2" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-display font-bold text-xl tracking-tight text-slate-900 group-hover:text-teal-700 transition">HOMELYTICS</span>
+            <span class="block text-[9px] tracking-widest uppercase font-semibold text-teal-700 -mt-1">Transaction Intelligence</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#how-it-works" class="hover:text-teal-700 transition">Methodology</a>
+        <a href="#video-explainer" class="hover:text-teal-700 transition">How to Negotiate</a>
+        <a href="#sample-dossier" class="hover:text-teal-700 transition">Sample Dossier</a>
+        <a href="#faq" class="hover:text-teal-700 transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#sample-dossier" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 bg-slate-100 hover:bg-slate-200 transition border border-slate-300">
+          <i data-lucide="file-down" class="w-3.5 h-3.5 text-teal-700"></i>
+          Sample PDF
+        </a>
+        <a href="#request-dossier" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg text-white bg-teal-700 hover:bg-teal-800 shadow-sm shadow-teal-800/30 transition">
+          <i data-lucide="search" class="w-3.5 h-3.5"></i>
+          Get Building Rates
+        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-2.5 group">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-black text-navy-950 text-lg sm:text-xl shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-                    H
+  <!-- ================= HERO & LEAD SUBMISSION FORM ================= -->
+  <section class="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden">
+    <!-- Glow Highlights -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-10 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left: Value Proposition Pitch -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-teal-400"></i>
+            Pre-Token Price Protection
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.16] text-white">
+            Know What Your Neighbors <span class="text-teal-400 underline decoration-teal-500/50 underline-offset-8">Actually Paid</span> Before You Sign.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
+            Developer sales desks quote aspirational rate cards with built-in buffers. Homelytics uncovers verified registered transaction values, floor-rise realities, and land litigation filings for your specific project.
+          </p>
+
+          <!-- Core Stat Cards -->
+          <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0">
+            <div class="bg-slate-800/80 border border-slate-700/70 p-3 rounded-xl text-left">
+              <div class="text-teal-400 font-bold text-lg sm:text-xl font-display">₹5L – ₹25L</div>
+              <div class="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">Average Negotiation Leverage</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700/70 p-3 rounded-xl text-left">
+              <div class="text-teal-400 font-bold text-lg sm:text-xl font-display">45 Mins</div>
+              <div class="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">WhatsApp PDF Dossier Turnaround</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700/70 p-3 rounded-xl text-left">
+              <div class="text-emerald-400 font-bold text-lg sm:text-xl font-display">Zero Spam</div>
+              <div class="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">We Never Sell Numbers to Brokers</div>
+            </div>
+          </div>
+
+          <!-- Video Link Anchor -->
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <a href="#video-explainer" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs sm:text-sm text-slate-200 transition font-medium">
+              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center">
+                <i data-lucide="play" class="w-3 h-3 fill-teal-400"></i>
+              </span>
+              Watch 45-Sec Negotiation Walkthrough
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Lead Capture Form Card -->
+        <div id="request-dossier" class="lg:col-span-5">
+          <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-7 text-slate-900 border border-slate-200 relative">
+            <div class="flex items-center justify-between pb-3.5 border-b border-slate-100">
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-slate-900">Request Building Dossier</h2>
+                <p class="text-xs text-slate-500">Delivered directly on WhatsApp within 45 mins</p>
+              </div>
+              <span class="inline-flex items-center px-2 py-0.5 rounded bg-teal-50 text-teal-800 text-[11px] font-bold border border-teal-200">
+                Launch Offer ₹999
+              </span>
+            </div>
+
+            <form id="leadForm" onsubmit="handleFormSubmit(event)" class="mt-4 space-y-3">
+              
+              <!-- 1. Project Name -->
+              <div>
+                <label for="projectName" class="block text-xs font-semibold text-slate-700 mb-1">Project / Society Name <span class="text-red-500">*</span></label>
+                <div class="relative">
+                  <i data-lucide="building" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+                  <input type="text" id="projectName" required placeholder="e.g. Rohan Ekam, The Skylark, Kohinoor" 
+                         class="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
+                </div>
+              </div>
+
+              <!-- 2. Locality & City Dropdown -->
+              <div class="grid grid-cols-2 gap-2.5">
+                <div>
+                  <label for="locality" class="block text-xs font-semibold text-slate-700 mb-1">Micro-Market / Area <span class="text-red-500">*</span></label>
+                  <input type="text" id="locality" required placeholder="e.g. Balewadi, Ravet, Baner" 
+                         class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
                 </div>
                 <div>
-                    <span class="text-xl sm:text-2xl font-black tracking-tight text-white block leading-none">HOMELYTICS</span>
-                    <span class="text-[9px] sm:text-[10px] font-semibold text-emerald-400 uppercase tracking-widest block mt-0.5">Project Intelligence</span>
+                  <label for="city" class="block text-xs font-semibold text-slate-700 mb-1">City <span class="text-red-500">*</span></label>
+                  <select id="city" required class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700 bg-white">
+                    <option value="Pune" selected>Pune</option>
+                    <option value="Mumbai (MMR)">Mumbai (MMR)</option>
+                    <option value="Thane / Navi Mumbai">Thane / Navi Mumbai</option>
+                  </select>
                 </div>
-            </a>
+              </div>
 
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-                <a href="#why-us" class="hover:text-emerald-400 transition-colors">Why Homelytics</a>
-                <a href="#sample-report" class="hover:text-emerald-400 transition-colors">Sample Report</a>
-                <a href="#how-it-works" class="hover:text-emerald-400 transition-colors">How It Works</a>
-                <button onclick="openTermsModal('terms')" class="hover:text-emerald-400 transition-colors">Terms & Legal</button>
-            </div>
-
-            <!-- Action Button & Mobile Hamburger -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <button onclick="openReportModal()" class="hidden sm:flex bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-extrabold px-4 sm:px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all items-center gap-2 text-xs sm:text-sm active:scale-95 touch-target">
-                    <i data-lucide="file-text" class="w-4 h-4"></i>
-                    <span>Get Project Report</span>
-                </button>
-
-                <!-- Mobile Hamburger Toggle Button -->
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-xl focus:outline-none touch-target flex items-center justify-center" aria-label="Toggle navigation menu">
-                    <i data-lucide="menu" id="menuOpenIcon" class="w-6 h-6"></i>
-                    <i data-lucide="x" id="menuCloseIcon" class="w-6 h-6 hidden"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- MOBILE NAV DRAWER -->
-        <div id="mobileMenu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#why-us" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3 rounded-xl bg-slate-800/50 text-slate-200 font-semibold text-sm active:bg-slate-800">
-                <span>Why Homelytics</span>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-            </a>
-            <a href="#sample-report" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3 rounded-xl bg-slate-800/50 text-slate-200 font-semibold text-sm active:bg-slate-800">
-                <span>Sample Report Preview</span>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-            </a>
-            <a href="#how-it-works" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3 rounded-xl bg-slate-800/50 text-slate-200 font-semibold text-sm active:bg-slate-800">
-                <span>How It Works</span>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-            </a>
-            <button onclick="toggleMobileMenu(); openTermsModal('terms');" class="w-full flex items-center justify-between p-3 rounded-xl bg-slate-800/50 text-slate-200 font-semibold text-sm text-left active:bg-slate-800">
-                <span>Terms & Legal Disclaimer</span>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-            </button>
-            <button onclick="toggleMobileMenu(); openReportModal();" class="w-full mt-2 bg-emerald-500 text-navy-950 font-extrabold p-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm active:scale-98">
-                <i data-lucide="message-square" class="w-4 h-4"></i>
-                <span>Order Report via WhatsApp</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="relative overflow-hidden pt-8 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-800/80">
-        <!-- Subtle Mobile Glows -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[500px] h-72 sm:h-[350px] bg-emerald-500/10 rounded-full blur-[90px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                
-                <!-- Hero Left Column -->
-                <div class="lg:col-span-7 text-left space-y-4 sm:space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-emerald-400 text-[11px] sm:text-xs font-semibold tracking-wide">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Independent Real Estate Analytics
-                    </div>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15]">
-                        Data-backed real estate project reports & pricing insight for homebuyers.
-                    </h1>
-
-                    <p class="text-sm sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-                        Avoid relying solely on advertised asking prices. We synthesize publicly available market data, recorded transaction benchmarks, and locality trends into clear PDF reports.
-                    </p>
-
-                    <!-- Trust Stats Grid (Responsive 2-col) -->
-                    <div class="grid grid-cols-2 gap-3 sm:gap-4 py-3 sm:py-4 border-y border-slate-800/90 my-2 sm:my-4">
-                        <div class="p-2.5 sm:p-3 bg-slate-900/40 rounded-xl border border-slate-800/80">
-                            <p class="text-xl sm:text-3xl font-black text-white">100%</p>
-                            <p class="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5">Independent Research</p>
-                        </div>
-                        <div class="p-2.5 sm:p-3 bg-slate-900/40 rounded-xl border border-slate-800/80">
-                            <p class="text-xl sm:text-3xl font-black text-emerald-400">0%</p>
-                            <p class="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5">Broker Bias or Hype</p>
-                        </div>
-                    </div>
-
-                    <!-- Action Buttons for Desktop & Mobile -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
-                        <button onclick="openReportModal()" class="bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-500/20 active:scale-98 transition-all flex items-center justify-center gap-2.5 text-sm sm:text-base touch-target">
-                            <i data-lucide="send" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                            <span>Request Report via WhatsApp</span>
-                        </button>
-                        <a href="#sample-report" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3.5 rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-2 text-sm sm:text-base active:scale-98 touch-target">
-                            <i data-lucide="eye" class="w-4 h-4 text-emerald-400"></i>
-                            <span>View Sample Layout</span>
-                        </a>
-                    </div>
-
-                    <!-- Micro Legal Disclaimer Notice -->
-                    <div class="p-3 bg-slate-900/80 border border-slate-800 rounded-xl text-[11px] text-slate-400 flex items-start gap-2 leading-relaxed">
-                        <i data-lucide="info" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
-                        <span><strong>Disclaimer:</strong> Reports are informational summaries from public sources. Not legal or valuation advice. See full disclaimer below.</span>
-                    </div>
-                </div>
-
-                <!-- Hero Right Mobile Card Preview -->
-                <div class="lg:col-span-5 mt-4 lg:mt-0">
-                    <div class="glass-panel rounded-2xl p-4 sm:p-6 shadow-2xl relative border border-slate-700/60 glow-emerald">
-                        <!-- Card Header -->
-                        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
-                                <span class="text-[10px] font-mono text-slate-400 ml-1">SAMPLE PREVIEW</span>
-                            </div>
-                            <span class="text-[10px] bg-slate-800 text-slate-300 font-bold px-2 py-0.5 rounded border border-slate-700">DUMMY DATA</span>
-                        </div>
-
-                        <!-- Card Body -->
-                        <div class="mt-4 space-y-3.5">
-                            <div>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">PROJECT PROFILE</span>
-                                <h3 class="text-lg sm:text-xl font-bold text-white flex items-center justify-between mt-0.5">
-                                    Project Apex (Skyline Crest)
-                                </h3>
-                                <p class="text-[11px] text-emerald-400 font-mono mt-0.5">Alpha Developers • Suburban Corridor</p>
-                            </div>
-
-                            <!-- Highlights Row -->
-                            <div class="grid grid-cols-2 gap-2.5 bg-slate-900/90 p-3 rounded-xl border border-slate-800">
-                                <div>
-                                    <p class="text-[10px] text-slate-400 font-medium">Agreement Median</p>
-                                    <p class="text-base sm:text-lg font-bold text-white">₹62.00 Lakhs</p>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] text-slate-400 font-medium">Target All-in Price</p>
-                                    <p class="text-base sm:text-lg font-bold text-emerald-400">₹70.30 Lakhs</p>
-                                </div>
-                            </div>
-
-                            <!-- Mobile Spectrum Bar -->
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-[11px]">
-                                    <span class="text-slate-400">Price Spectrum (2 BHK):</span>
-                                    <span class="text-emerald-400 font-bold">Target ~₹70.3L</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden flex">
-                                    <div class="bg-emerald-500 h-full w-[30%]"></div>
-                                    <div class="bg-teal-400 h-full w-[45%]"></div>
-                                    <div class="bg-cyan-500 h-full w-[25%]"></div>
-                                </div>
-                                <div class="flex justify-between text-[10px] text-slate-400 font-mono">
-                                    <span>Baseline: ₹69.6L</span>
-                                    <span>Upper: ₹74.6L</span>
-                                </div>
-                            </div>
-
-                            <!-- Yield Box -->
-                            <div class="p-2.5 bg-emerald-950/40 border border-emerald-500/30 rounded-xl flex items-center justify-between">
-                                <span class="text-xs font-semibold text-slate-200 flex items-center gap-1.5">
-                                    <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i>
-                                    Gross Rental Yield
-                                </span>
-                                <span class="text-xs font-bold text-emerald-400">3.4% p.a.</span>
-                            </div>
-
-                            <!-- Card Action -->
-                            <button onclick="openReportModal()" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-bold border border-slate-700 transition-colors flex items-center justify-center gap-2 active:scale-98 touch-target">
-                                <span>Get Report For Your Project</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- GENEROUS VERTICAL SPACING BETWEEN HERO & WHY HOMELYTICS (PER USER RULE) -->
-    <div class="py-12 sm:py-20 md:py-28"></div>
-
-    <!-- WHY HOMELYTICS / VALUE PROPOSITION -->
-    <section id="why-us" class="py-16 sm:py-24 bg-navy-900/60 relative border-y border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                <h2 class="text-xs font-extrabold text-emerald-400 uppercase tracking-widest mb-2">Why Choose Homelytics</h2>
-                <h3 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                    Beyond Portal Advertisements
-                </h3>
-                <p class="text-slate-400 mt-3 text-xs sm:text-base leading-relaxed">
-                    Public property listings show asking rates—not necessarily settled values. Homelytics consolidates available transaction notes, localized yields, and public filings into structured summaries.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <!-- Feature 1 -->
-                <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
-                        <i data-lucide="receipt" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h4 class="text-base sm:text-lg font-bold text-white mb-1.5">Price Benchmarks</h4>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Evaluates sample historical sales to establish realistic baseline, median, and upper-limit price expectations.
-                    </p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
-                        <i data-lucide="layers" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h4 class="text-base sm:text-lg font-bold text-white mb-1.5">Outlay Structure</h4>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Considers applicable statutory charges, duty estimates, and taxes to provide a complete all-in project price picture.
-                    </p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
-                        <i data-lucide="scale" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h4 class="text-base sm:text-lg font-bold text-white mb-1.5">Public Record Check</h4>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Reviews publicly accessible dispute registries and regulatory filings to highlight recorded litigation.
-                    </p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
-                        <i data-lucide="bar-chart-3" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                    </div>
-                    <h4 class="text-base sm:text-lg font-bold text-white mb-1.5">Market Sentiment</h4>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Provides synthesized local rental yields, infrastructure connectivity notes, and buyer sentiment digests.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SAMPLE REPORT SHOWCASE SECTION (ANONYMIZED DATA) -->
-    <section id="sample-report" class="py-16 sm:py-24 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
+              <!-- 3. Configuration & Carpet Area -->
+              <div class="grid grid-cols-2 gap-2.5">
                 <div>
-                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">SAMPLE REPORT LAYOUT</span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-1">
-                        Sample Intelligence Format
-                    </h2>
-                    <p class="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl">
-                        Illustrative layout using dummy project details ("Project Apex") to demonstrate data presentation.
-                    </p>
+                  <label for="config" class="block text-xs font-semibold text-slate-700 mb-1">Configuration <span class="text-red-500">*</span></label>
+                  <select id="config" required class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700 bg-white">
+                    <option value="2 BHK">2 BHK</option>
+                    <option value="3 BHK" selected>3 BHK</option>
+                    <option value="4 BHK">4 BHK</option>
+                    <option value="Penthouse / Duplex">Penthouse / Duplex</option>
+                    <option value="1 BHK">1 BHK</option>
+                  </select>
                 </div>
-                <button onclick="openReportModal()" class="self-start md:self-auto bg-emerald-500 hover:bg-emerald-600 text-navy-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2 active:scale-95 touch-target">
-                    <i data-lucide="file-text" class="w-4 h-4"></i>
-                    <span>Order Custom Report</span>
-                </button>
-            </div>
-
-            <!-- Sample Display Panel -->
-            <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
-                
-                <!-- Sample Header Bar -->
-                <div class="bg-slate-900/90 p-4 sm:p-6 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <h3 class="text-lg sm:text-xl font-bold text-white">Project Apex (Skyline Crest)</h3>
-                            <span class="bg-slate-800 text-slate-300 text-[10px] px-2 py-0.5 rounded border border-slate-700">Suburban Corridor</span>
-                        </div>
-                        <p class="text-[11px] text-slate-400 mt-0.5">Developer: Alpha Developers • Sample ID: P999000XXXXX</p>
-                    </div>
-                    <div class="text-left sm:text-right border-t sm:border-0 pt-2 sm:pt-0 border-slate-800">
-                        <span class="text-[10px] text-slate-400 block uppercase">Configuration Analyzed</span>
-                        <span class="text-xs sm:text-sm font-bold text-emerald-400">2 BHK (~750 sq ft carpet)</span>
-                    </div>
+                <div>
+                  <label for="carpetArea" class="block text-xs font-semibold text-slate-700 mb-1">Carpet Area (sq ft)</label>
+                  <input type="number" id="carpetArea" placeholder="e.g. 969, 1450" 
+                         class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
                 </div>
+              </div>
 
-                <!-- Sample Grid Content -->
-                <div class="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
-                    
-                    <!-- 1. Price Benchmark Cards -->
-                    <div>
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
-                            <i data-lucide="dollar-sign" class="w-4 h-4 text-emerald-400"></i>
-                            Anonymized Price Benchmarks (Sample)
-                        </h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <!-- Baseline -->
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-                                <span class="text-[10px] text-slate-400 font-medium block">BASELINE (25th Percentile)</span>
-                                <div class="text-xl sm:text-2xl font-black text-white mt-0.5">₹69.6 Lakhs</div>
-                                <p class="text-[11px] text-slate-400 mt-0.5">Agreement ~₹61.60 L</p>
-                            </div>
+              <!-- 4. Flat Series / Unit Number -->
+              <div>
+                <label for="unitSeries" class="block text-xs font-semibold text-slate-700 mb-1">Flat Series or Unit # (Optional)</label>
+                <input type="text" id="unitSeries" placeholder="e.g. Flat 1404, Series 02, or Tower B" 
+                       class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
+                <span class="text-[10px] text-slate-500">Enables verification of specific floor-rise and layout precedents.</span>
+              </div>
 
-                            <!-- Target Price (Median) -->
-                            <div class="bg-gradient-to-br from-emerald-950/70 to-slate-900 p-4 rounded-xl border border-emerald-500/50 relative">
-                                <span class="text-[10px] text-emerald-400 font-bold tracking-wide block">TARGET PRICE (Median)</span>
-                                <div class="text-xl sm:text-2xl font-black text-emerald-400 mt-0.5">₹70.3 Lakhs</div>
-                                <p class="text-[11px] text-slate-300 mt-0.5">Agreement ~₹62.18 L</p>
-                                <span class="absolute top-3 right-3 text-[9px] bg-emerald-500 text-navy-950 font-extrabold px-1.5 py-0.5 rounded">SAMPLE MEDIAN</span>
-                            </div>
-
-                            <!-- Upper Limit -->
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-                                <span class="text-[10px] text-slate-400 font-medium block">UPPER LIMIT (Capped)</span>
-                                <div class="text-xl sm:text-2xl font-black text-white mt-0.5">₹74.6 Lakhs</div>
-                                <p class="text-[11px] text-slate-400 mt-0.5">Agreement ~₹66.00 L</p>
-                            </div>
-                        </div>
+              <!-- 5. Buyer Contact & WhatsApp -->
+              <div class="pt-2 border-t border-slate-100">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div>
+                    <label for="userName" class="block text-xs font-semibold text-slate-700 mb-1">Your Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="userName" required placeholder="e.g. Vikram Joshi" 
+                           class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
+                  </div>
+                  <div>
+                    <label for="whatsappNumber" class="block text-xs font-semibold text-slate-700 mb-1">Your WhatsApp No. <span class="text-red-500">*</span></label>
+                    <div class="relative">
+                      <span class="absolute left-3 top-2 text-xs font-bold text-slate-400">+91</span>
+                      <input type="tel" id="whatsappNumber" required pattern="[0-9]{10}" placeholder="9876543210" 
+                             class="w-full pl-10 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
                     </div>
-
-                    <!-- 2. Chart & Rental Matrix Grid -->
-                    <div class="grid lg:grid-cols-12 gap-6">
-                        
-                        <!-- Chart Box -->
-                        <div class="lg:col-span-7 bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-                            <div class="flex items-center justify-between mb-3">
-                                <h4 class="text-xs sm:text-sm font-bold text-slate-200 flex items-center gap-1.5">
-                                    <i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
-                                    Registration Velocity (Sample Trend)
-                                </h4>
-                                <span class="text-[10px] text-slate-400">Monthly Volume</span>
-                            </div>
-                            <div class="h-48 sm:h-56 relative w-full">
-                                <canvas id="registrationChart"></canvas>
-                            </div>
-                        </div>
-
-                        <!-- Rental Yield & Litigation -->
-                        <div class="lg:col-span-5 space-y-3">
-                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
-                                <h4 class="text-xs sm:text-sm font-bold text-slate-200 mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="pie-chart" class="w-4 h-4 text-emerald-400"></i>
-                                    Gross Rental Yield Summary
-                                </h4>
-                                <div class="space-y-2 text-xs">
-                                    <div class="flex justify-between py-1 border-b border-slate-800">
-                                        <span class="text-slate-400">Assumed Rent (2 BHK):</span>
-                                        <span class="text-white font-bold">₹20,000 / mo</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-slate-800">
-                                        <span class="text-slate-400">Est. Annual Rent:</span>
-                                        <span class="text-white font-bold">₹2.40 Lakhs</span>
-                                    </div>
-                                    <div class="flex justify-between py-1 border-b border-slate-800">
-                                        <span class="text-slate-400">Gross Yield on Target Price:</span>
-                                        <span class="text-emerald-400 font-bold">3.4% p.a.</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 flex items-start gap-2.5">
-                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                                <div>
-                                    <h5 class="text-xs font-bold text-white uppercase tracking-wider">Litigation Record Check</h5>
-                                    <p class="text-[11px] text-slate-300 mt-0.5 leading-tight">
-                                        Reports review publicly recorded dispute files for the subject project at compilation time.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- 3. Mobile Table View (Cards on mobile, table on desktop) -->
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-200 mb-3 flex items-center gap-1.5">
-                            <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i>
-                            Recent Transaction Log Format (Anonymized)
-                        </h4>
-                        
-                        <!-- Mobile Responsive Cards (Visible on Small Screens) -->
-                        <div class="block sm:hidden space-y-2.5">
-                            <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1.5 text-xs">
-                                <div class="flex justify-between font-bold text-white border-b border-slate-800 pb-1">
-                                    <span>Month 1 • Tower F</span>
-                                    <span class="text-emerald-400">₹70.01 Lakhs</span>
-                                </div>
-                                <div class="flex justify-between text-slate-400 text-[11px]">
-                                    <span>Floor 4 • Carpet: 748 sqft</span>
-                                    <span>Agreement: ₹61.96L</span>
-                                </div>
-                            </div>
-                            <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 space-y-1.5 text-xs">
-                                <div class="flex justify-between font-bold text-white border-b border-slate-800 pb-1">
-                                    <span>Month 2 • Tower D</span>
-                                    <span class="text-emerald-400">₹80.23 Lakhs</span>
-                                </div>
-                                <div class="flex justify-between text-slate-400 text-[11px]">
-                                    <span>Floor 17 • Carpet: 756 sqft</span>
-                                    <span>Agreement: ₹71.00L</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Desktop Table (Hidden on narrow mobile screens) -->
-                        <div class="hidden sm:block overflow-x-auto rounded-xl border border-slate-800">
-                            <table class="w-full text-left text-xs">
-                                <thead class="bg-slate-900 text-slate-400 uppercase font-semibold border-b border-slate-800">
-                                    <tr>
-                                        <th class="p-3">Period</th>
-                                        <th class="p-3">Block</th>
-                                        <th class="p-3">Floor</th>
-                                        <th class="p-3">Carpet</th>
-                                        <th class="p-3">Agreement</th>
-                                        <th class="p-3 text-emerald-400">Est. Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-800 text-slate-300">
-                                    <tr class="hover:bg-slate-800/40">
-                                        <td class="p-3 font-medium text-white">Month 1</td>
-                                        <td class="p-3">Tower F</td>
-                                        <td class="p-3">4th Floor</td>
-                                        <td class="p-3">748 sqft</td>
-                                        <td class="p-3">₹61,96,428</td>
-                                        <td class="p-3 text-emerald-400 font-bold">₹70,01,964</td>
-                                    </tr>
-                                    <tr class="hover:bg-slate-800/40">
-                                        <td class="p-3 font-medium text-white">Month 2</td>
-                                        <td class="p-3">Tower D</td>
-                                        <td class="p-3">17th Floor</td>
-                                        <td class="p-3">756 sqft</td>
-                                        <td class="p-3">₹71,00,000</td>
-                                        <td class="p-3 text-emerald-400 font-bold">₹80,23,000</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
+                  </div>
                 </div>
+              </div>
 
-                <!-- Footer Callout -->
-                <div class="bg-slate-900 p-4 sm:p-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <div class="text-center sm:text-left">
-                        <p class="text-xs sm:text-sm font-bold text-white">Need an independent report for a specific project?</p>
-                        <p class="text-[11px] text-slate-400">Share project details with us on WhatsApp.</p>
-                    </div>
-                    <button onclick="openReportModal()" class="w-full sm:w-auto bg-emerald-500 text-navy-950 font-extrabold px-5 py-3 rounded-xl text-xs sm:text-sm transition-all active:scale-95 touch-target">
-                        Request Project Report
-                    </button>
-                </div>
+              <!-- Submit Button -->
+              <button type="submit" class="w-full mt-2 py-3 px-4 rounded-xl font-bold text-white bg-teal-700 hover:bg-teal-800 transition shadow-lg shadow-teal-700/20 flex items-center justify-center gap-2 group">
+                <i data-lucide="message-circle" class="w-4 h-4 fill-emerald-400 text-emerald-400"></i>
+                <span>Get Closed Rates on WhatsApp</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+              </button>
 
-            </div>
+              <div class="flex items-center justify-center gap-4 text-[10px] text-slate-400 pt-1">
+                <span class="flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3 text-emerald-600"></i> Strict Privacy</span>
+                <span>•</span>
+                <span>No Broker Cold Calls</span>
+                <span>•</span>
+                <span>UPI Enabled</span>
+              </div>
+            </form>
+          </div>
         </div>
-    </section>
 
-    <!-- HOW IT WORKS SECTION -->
-    <section id="how-it-works" class="py-16 sm:py-24 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">SIMPLE PROCESS</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mt-1">How Homelytics Works</h2>
-            </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="grid sm:grid-cols-3 gap-6">
-                <!-- Step 1 -->
-                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
-                    <div class="w-9 h-9 rounded-full bg-emerald-500 text-navy-950 font-black flex items-center justify-center text-base mb-4 shadow-md shadow-emerald-500/20">
-                        1
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-white mb-1">Submit Details</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Enter your phone number and the name/location of your target real estate project.
-                    </p>
-                </div>
+  <!-- ================= METHODOLOGY: WHAT IS IN THE DOSSIER ================= -->
+  <section id="how-it-works" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Transaction Intelligence Framework</span>
+        <h2 class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Four Data Layers That Give You Settlement Leverage</h2>
+        <p class="mt-2 text-slate-600 text-xs sm:text-sm">Brokers negotiate with sales rhetoric. Homelytics arms you with statutory transaction precedent.</p>
+      </div>
 
-                <!-- Step 2 -->
-                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
-                    <div class="w-9 h-9 rounded-full bg-emerald-500 text-navy-950 font-black flex items-center justify-center text-base mb-4 shadow-md shadow-emerald-500/20">
-                        2
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-white mb-1">WhatsApp Connect</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        We contact you directly on WhatsApp to confirm project specifics and requirements.
-                    </p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
-                    <div class="w-9 h-9 rounded-full bg-emerald-500 text-navy-950 font-black flex items-center justify-center text-base mb-4 shadow-md shadow-emerald-500/20">
-                        3
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-white mb-1">Receive Report</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                        Receive your digital project PDF summarizing available metrics and public indicators.
-                    </p>
-                </div>
-            </div>
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">1</div>
+          <h3 class="mt-4 font-bold text-slate-900 text-base">Baseline &amp; Target Median</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Statistically derived 25th percentile and median transaction bands give you a hard mathematical anchor for your counter-offer.
+          </p>
         </div>
-    </section>
 
-    <!-- MANDATORY LEGAL DISCLAIMER SECTION -->
-    <section class="py-12 bg-navy-950 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-900/70 p-5 sm:p-6 rounded-2xl border border-slate-800 text-xs leading-relaxed text-slate-400 space-y-3">
-                <div class="flex items-center gap-2 text-slate-200 font-bold uppercase tracking-wider text-xs">
-                    <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                    Homelytics Legal Disclaimer
-                </div>
-                <p>
-                    Homelytics reports are informational summaries compiled from publicly available sources (including regulatory filings, property portals, and social media). Homelytics is <strong>not a law firm or registered valuer</strong>, and our reports do not constitute legal advice, a title search, a valuation, or investment advice.
-                </p>
-                <p>
-                    We do not guarantee accuracy, completeness, or timeliness. You should independently verify all facts and consult a qualified lawyer and registered valuer before making any financial commitment. Our total liability is limited to the fee paid for the report to the extent permitted by law.
-                </p>
-                <div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px] text-slate-400 border-t border-slate-800">
-                    <span>© 2026 Homelytics. All rights reserved.</span>
-                    <button onclick="openTermsModal('terms')" class="text-emerald-400 hover:underline font-bold">
-                        View Complete Terms & Conditions & Refund Policy &rarr;
-                    </button>
-                </div>
-            </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">2</div>
+          <h3 class="mt-4 font-bold text-slate-900 text-base">Floor-Rise Examination</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Direct proof of whether buyers paid steep floor premiums or if identical agreement values closed across floors 8 through 20.
+          </p>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-navy-900 border-t border-slate-800 py-8 text-slate-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center font-black text-navy-950 text-sm">
-                    H
-                </div>
-                <span class="font-black text-white text-base tracking-tight">HOMELYTICS</span>
-            </div>
-            <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
-                <a href="#sample-report" class="hover:text-white">Sample Layout</a>
-                <button onclick="openTermsModal('terms')" class="hover:text-white">Terms & Conditions</button>
-                <button onclick="openTermsModal('refund')" class="hover:text-white">Refund Policy</button>
-            </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">3</div>
+          <h3 class="mt-4 font-bold text-slate-900 text-base">Developer Sales Momentum</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Monthly registration velocity tracking lets you see if inventory absorption is stalling, granting you quarter-end bargaining power.
+          </p>
         </div>
-    </footer>
 
-    <!-- STICKY MOBILE CONVERSION BAR (VISIBLE ON PHONES) -->
-    <div class="fixed bottom-0 left-0 right-0 z-30 bg-navy-900/95 border-t border-slate-800 p-3 md:hidden backdrop-blur-md flex items-center justify-between gap-2 shadow-2xl">
-        <div class="text-left">
-            <span class="text-[10px] text-slate-400 block uppercase font-bold">HOMELYTICS</span>
-            <span class="text-xs font-bold text-white">Request Project Report</span>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
+          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">4</div>
+          <h3 class="mt-4 font-bold text-slate-900 text-base">Litigation &amp; Land Suits</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            A comprehensive catalog of declared civil partition suits, High Court revision petitions, and revenue appeals touching the parcel.
+          </p>
         </div>
-        <button onclick="openReportModal()" class="bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-extrabold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 active:scale-95 touch-target">
-            <i data-lucide="message-square" class="w-4 h-4"></i>
-            <span>WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPLAINER VIDEO SECTION ================= -->
+  <section id="video-explainer" class="py-16 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">45-Second Strategy Demo</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Watch How Real Buyers Use This At The Sales Desk</h2>
+      <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-xl mx-auto">
+        Learn how quoting recent registered floor benchmarks shifts control from the sales executive to you.
+      </p>
+
+      <!-- Video Player Container (Easily Replaceable with your YouTube or MP4 Link) -->
+      <div class="mt-8 relative rounded-2xl overflow-hidden shadow-2xl border border-slate-300 bg-slate-900 aspect-video max-w-2xl mx-auto flex items-center justify-center">
+        
+        <!-- ========================================================================= -->
+        <!-- TO EMBED YOUR YOUTUBE VIDEO:                                              -->
+        <!-- 1. Upload your 45-sec video to YouTube as 'Unlisted'.                     -->
+        <!-- 2. Replace 'YOUR_YOUTUBE_ID_HERE' with your real 11-character video ID.   -->
+        <!-- ========================================================================= -->
+        <iframe 
+          id="explainerIframe"
+          class="w-full h-full"
+          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" 
+          title="Homelytics Negotiation Strategy Video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        
+      </div>
+      <p class="text-[11px] text-slate-500 mt-3 italic">
+        Tip: To link your own video, open index.html and update the YouTube iframe src URL above.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= SPECIMEN REPORT SECTION (AURA HEIGHTS ₹2-3 CR) ================= -->
+  <section id="sample-dossier" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Specimen Intelligence Dossier</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Examine A Sample Homelytics Report</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">Specimen extract for luxury configuration: 1,450 sq ft 3 BHK in the ₹2.00 Cr – ₹3.00 Cr range.</p>
+        </div>
+        
+        <!-- Direct PDF Download Button -->
+        <a href="homelytics_sample_dummy_report.pdf" download class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs shadow-md shadow-teal-700/20 self-start md:self-auto transition">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          Download Sample PDF Dossier
+        </a>
+      </div>
+
+      <!-- Specimen Card Mockup -->
+      <div class="bg-slate-50 rounded-2xl border border-slate-300 shadow-sm p-6 sm:p-8 space-y-6">
+        
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
+          <div>
+            <span class="text-[9px] font-bold text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded uppercase tracking-wider">Specimen / Public Sample</span>
+            <h3 class="text-xl font-bold text-slate-900 mt-1.5">Aura Heights (Phase 1)</h3>
+            <p class="text-xs text-slate-500">Westridge Valley, Pune • 3 BHK Luxury (1,450 sq ft Carpet) • Apex Living Infra LLP</p>
+          </div>
+          <div class="text-left sm:text-right">
+            <span class="text-xs text-slate-400">Sample Date: Oct 2026</span>
+            <div class="text-xs font-bold text-emerald-700">24 Registered Sales Analyzed</div>
+          </div>
+        </div>
+
+        <!-- 3 Core Negotiation Anchors -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-slate-500">Baseline Offer (25th %tile)</span>
+            <div class="text-2xl font-extrabold text-slate-900 mt-1">₹2.31 Cr*</div>
+            <p class="text-xs text-slate-500 mt-1">Agreement: ₹2.04 Cr (₹14,068 psf). Strong opening counter-anchor.</p>
+          </div>
+
+          <div class="border-2 border-teal-700 rounded-xl p-4 bg-teal-50/70 shadow-sm relative">
+            <span class="absolute -top-2.5 right-3 bg-teal-800 text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">Target Benchmark</span>
+            <span class="text-[10px] uppercase font-bold text-teal-800">Target Benchmark (Median)</span>
+            <div class="text-2xl font-extrabold text-teal-900 mt-1">₹2.46 Cr*</div>
+            <p class="text-xs text-teal-800 mt-1">Agreement: ₹2.18 Cr (₹15,034 psf). Recommended signing equilibrium.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-slate-500">Upper Ceiling (90th %tile)</span>
+            <div class="text-2xl font-extrabold text-slate-900 mt-1">₹2.71 Cr*</div>
+            <p class="text-xs text-slate-500 mt-1">Agreement: ₹2.40 Cr (₹16,551 psf). Absolute walk-away threshold.</p>
+          </div>
+        </div>
+
+        <!-- Specimen Extract Table -->
+        <div>
+          <h4 class="text-xs font-bold uppercase text-slate-700 mb-2">Registered Closed Transactions (Specimen Extract)</h4>
+          <div class="overflow-x-auto border border-slate-200 rounded-lg bg-white">
+            <table class="w-full text-left text-xs text-slate-700">
+              <thead class="bg-slate-100 text-slate-800 font-semibold border-b border-slate-200">
+                <tr>
+                  <th class="p-2.5">Reg. Date</th>
+                  <th class="p-2.5">Tower</th>
+                  <th class="p-2.5">Unit #</th>
+                  <th class="p-2.5">Floor</th>
+                  <th class="p-2.5">Agreement Value (₹)</th>
+                  <th class="p-2.5">Est. All-In Outlay (× 1.13)*</th>
+                  <th class="p-2.5">Est. Rate psf</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <tr class="hover:bg-slate-50">
+                  <td class="p-2.5 font-medium">19 Sep</td>
+                  <td class="p-2.5">Tower Alpha</td>
+                  <td class="p-2.5 font-mono">2104</td>
+                  <td class="p-2.5">21st</td>
+                  <td class="p-2.5 font-bold">₹2,24,50,000</td>
+                  <td class="p-2.5 font-bold text-teal-800">₹2,53,68,500</td>
+                  <td class="p-2.5">₹17,495</td>
+                </tr>
+                <tr class="bg-teal-50/40 hover:bg-teal-50/60">
+                  <td class="p-2.5 font-medium">04 Sep</td>
+                  <td class="p-2.5">Tower Beta</td>
+                  <td class="p-2.5 font-mono">1402</td>
+                  <td class="p-2.5">14th</td>
+                  <td class="p-2.5 font-bold">₹2,17,50,000</td>
+                  <td class="p-2.5 font-bold text-teal-800">₹2,45,77,500</td>
+                  <td class="p-2.5">₹16,950</td>
+                </tr>
+                <tr class="bg-teal-50/40 hover:bg-teal-50/60">
+                  <td class="p-2.5 font-medium">12 Aug</td>
+                  <td class="p-2.5">Tower Alpha</td>
+                  <td class="p-2.5 font-mono">802</td>
+                  <td class="p-2.5">8th</td>
+                  <td class="p-2.5 font-bold">₹2,17,50,000</td>
+                  <td class="p-2.5 font-bold text-teal-800">₹2,45,77,500</td>
+                  <td class="p-2.5">₹16,950</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 mt-2 gap-2">
+            <span>*All-in calculation: Agreement × 1.13 (Includes 7% Stamp Duty + 5% GST + 1% Registration).</span>
+            <span class="text-teal-800 font-semibold">Floors 8, 11, and 14 registered at identical base rates.</span>
+          </div>
+        </div>
+
+        <!-- Sample Litigation Disclosure Box -->
+        <div class="p-3.5 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 leading-relaxed">
+          <strong>Litigation Precedent Analysis:</strong> The specimen dossier maps 10 active and disposed civil partition and land demarcation matters across the Pune Civil Court and High Court, reminding buyers to obtain independent title search certifications prior to token release.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Questions &amp; Answers</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-3.5">
+        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
+            <span>Where do these transaction benchmarks come from?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Our benchmarks are extracted from verified, registered property transaction deeds and statutory regulatory filings in Maharashtra. You receive certified agreement values rather than unverified portal listings or developer marketing brochures.
+          </p>
+        </details>
+
+        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
+            <span>How is the "Estimated All-In Outlay" calculated?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            While the Agreement Value is the exact statutory figure, we project your total cash requirement using the transparent formula: <em>Agreement Value × 1.13</em>. This incorporates 7% Maharashtra Stamp Duty + 5% GST on under-construction property + 1% statutory registration and local levies.
+          </p>
+        </details>
+
+        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
+            <span>Will I receive calls from real estate brokers or agents?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <strong>Never.</strong> Homelytics is an independent transaction intelligence service, not a brokerage. We never sell, rent, or share buyer contact information with developers or channel partners.
+          </p>
+        </details>
+
+        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
+            <span>Does this report replace an advocate's Title Search Report?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            No. Our dossiers provide commercial transaction benchmarks, rate analyses, and regulatory litigation compilations. Buyers must always engage an independent property lawyer to conduct physical search reports at the sub-registrar office before executing final deeds.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-display font-bold text-white text-base tracking-tight">HOMELYTICS</span>
+        <p class="text-slate-500 mt-0.5">Proprietary Real Estate Price Discovery &amp; Transaction Intelligence.</p>
+      </div>
+      <div class="text-center sm:text-right text-slate-500">
+        <p>© 2026 Homelytics Data Labs. All rights reserved.</p>
+        <p class="text-[11px] mt-0.5">Coverage: Pune &amp; Mumbai (MMR)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= THANK YOU / CONFIRMATION MODAL ================= -->
+  <div id="thankYouModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-slate-900 shadow-2xl border border-slate-200 transform transition-all scale-95 opacity-0 duration-200" id="modalCard">
+      <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3.5">
+        <i data-lucide="check-circle" class="w-7 h-7"></i>
+      </div>
+
+      <h3 class="text-lg font-bold text-center text-slate-900">Request Dispatched!</h3>
+      <p class="text-xs text-center text-slate-500 mt-1">Our intelligence engine is compiling your custom dossier.</p>
+
+      <div class="mt-4 p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs">
+        <div class="flex justify-between">
+          <span class="text-slate-500">Target Project:</span>
+          <span class="font-bold text-slate-800" id="confirmProject">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Configuration:</span>
+          <span class="font-bold text-slate-800" id="confirmConfig">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Micro-Market:</span>
+          <span class="font-bold text-slate-800" id="confirmLocation">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Delivery Channel:</span>
+          <span class="font-bold text-teal-800 flex items-center gap-1">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-teal-800"></i> WhatsApp
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-3.5 p-3 bg-teal-50 border border-teal-200 rounded-lg text-[11px] text-teal-900 leading-relaxed">
+        <strong>Next Step:</strong> Check your WhatsApp. Our analyst will verify the project records and deliver your 5-page dossier within <strong>45 minutes</strong>.
+      </div>
+
+      <div class="mt-5 flex flex-col gap-2">
+        <a href="homelytics_sample_dummy_report.pdf" download class="w-full py-2.5 px-4 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold transition flex items-center justify-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          Preview Specimen Dossier (PDF)
+        </a>
+        <button onclick="closeThankYouModal()" class="w-full py-2 px-4 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+          Return to Site
         </button>
+      </div>
     </div>
+  </div>
 
-    <!-- MODAL 1: WHATSAPP LEAD CAPTURE FORM -->
-    <div id="reportModal" class="fixed inset-0 z-50 bg-navy-950/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
-        <div class="glass-panel-light max-w-md w-full rounded-2xl p-5 sm:p-7 text-slate-900 shadow-2xl relative border border-slate-200 animate-in fade-in zoom-in duration-200">
-            <!-- Close button -->
-            <button onclick="closeReportModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 touch-target flex items-center justify-center">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-            <!-- Form Body -->
-            <div id="modalFormState">
-                <div class="flex items-center gap-2.5 mb-4">
-                    <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-                        <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">Request Project Report</h3>
-                        <p class="text-[11px] text-slate-500">Submit details to connect via WhatsApp.</p>
-                    </div>
-                </div>
+    // Target Business WhatsApp Number
+    const DESTINATION_WHATSAPP_NUMBER = "918087273393";
 
-                <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-3">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Your Full Name *</label>
-                        <input type="text" id="userName" required placeholder="e.g. Rahul Sharma" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                    </div>
+    function handleFormSubmit(event) {
+      event.preventDefault();
 
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">WhatsApp Phone Number *</label>
-                        <input type="tel" id="userPhone" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                    </div>
+      // Retrieve form values
+      const projectName = document.getElementById("projectName").value.trim();
+      const locality = document.getElementById("locality").value.trim();
+      const city = document.getElementById("city").value;
+      const config = document.getElementById("config").value;
+      const carpetArea = document.getElementById("carpetArea").value.trim() || "Standard";
+      const unitSeries = document.getElementById("unitSeries").value.trim() || "Not Specified";
+      const userName = document.getElementById("userName").value.trim();
+      const whatsappNumber = document.getElementById("whatsappNumber").value.trim();
 
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Target Project Name *</label>
-                        <input type="text" id="projectName" required placeholder="e.g. Society / Project Name" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                    </div>
+      // Construct clean, structured WhatsApp message
+      const messageText = 
+        `*NEW HOMELYTICS REPORT REQUEST*\n` +
+        `------------------------------------\n` +
+        `👤 *Buyer Name:* ${userName}\n` +
+        `📱 *WhatsApp:* +91 ${whatsappNumber}\n\n` +
+        `🏢 *Project:* ${projectName}\n` +
+        `📍 *Micro-Market:* ${locality}, ${city}\n` +
+        `📐 *Configuration:* ${config} (${carpetArea} sq ft)\n` +
+        `🔢 *Series / Unit:* ${unitSeries}\n` +
+        `------------------------------------\n` +
+        `Please confirm registered baseline figures & delivery within 45 mins.`;
 
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Location / Area</label>
-                        <input type="text" id="projectCity" placeholder="e.g. City / Suburb" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-                    </div>
+      // Construct WhatsApp URL
+      const encodedMsg = encodeURIComponent(messageText);
+      const waUrl = `https://wa.me/${DESTINATION_WHATSAPP_NUMBER}?text=${encodedMsg}`;
 
-                    <div class="p-2.5 bg-slate-100 rounded-xl text-[10px] text-slate-500 border border-slate-200 leading-normal">
-                        By submitting, you agree to our <button type="button" onclick="openTermsModal()" class="text-emerald-700 font-bold underline">Terms & Conditions</button>. We respect your privacy.
-                    </div>
+      // Populate confirmation modal content
+      document.getElementById("confirmProject").textContent = projectName;
+      document.getElementById("confirmConfig").textContent = `${config} (${carpetArea} sq ft)`;
+      document.getElementById("confirmLocation").textContent = `${locality}, ${city}`;
 
-                    <button type="submit" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm active:scale-98 touch-target">
-                        <i data-lucide="message-square" class="w-4 h-4"></i>
-                        <span>Submit & Open WhatsApp</span>
-                    </button>
-                </form>
-            </div>
+      // Show Thank You Modal
+      showThankYouModal();
 
-            <!-- Success State -->
-            <div id="modalSuccessState" class="hidden text-center py-6 space-y-3">
-                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-xl">
-                    <i data-lucide="check-circle-2" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-black text-slate-900">Thank You!</h3>
-                <p class="text-xs text-slate-600 max-w-xs mx-auto">
-                    We have received your request. We will reach out on <strong>WhatsApp</strong> regarding your project report.
-                </p>
-                <div class="pt-2">
-                    <button onclick="closeReportModal()" class="w-full py-3 bg-slate-900 text-white font-bold rounded-xl text-xs hover:bg-slate-800 transition-colors">
-                        Close Window
-                    </button>
-                </div>
-            </div>
+      // Automatically launch WhatsApp in new tab after 400ms delay
+      setTimeout(() => {
+        window.open(waUrl, "_blank");
+      }, 400);
+    }
 
-        </div>
-    </div>
+    // Modal Control Functions
+    function showThankYouModal() {
+      const modal = document.getElementById("thankYouModal");
+      const card = document.getElementById("modalCard");
+      modal.classList.remove("hidden");
+      setTimeout(() => {
+        card.classList.remove("scale-95", "opacity-0");
+        card.classList.add("scale-100", "opacity-100");
+      }, 10);
+    }
 
-    <!-- MODAL 2: LEGAL TERMS & REFUND DRAWER -->
-    <div id="termsModal" class="fixed inset-0 z-50 bg-navy-950/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
-        <div class="bg-navy-900 text-slate-100 max-w-3xl w-full rounded-2xl border border-slate-700 shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
-            
-            <!-- Drawer Header -->
-            <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950">
-                <div>
-                    <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                        <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
-                        Terms & Conditions & Refund Policy
-                    </h3>
-                    <p class="text-[11px] text-slate-400">Homelytics legal provisions.</p>
-                </div>
-                <button onclick="closeTermsModal()" class="text-slate-400 hover:text-white touch-target flex items-center justify-center">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <!-- Tabs -->
-            <div class="flex border-b border-slate-800 bg-slate-900 text-xs font-bold">
-                <button id="tabTermsBtn" onclick="switchTermsTab('terms')" class="flex-1 py-3 px-3 text-center border-b-2 border-emerald-500 text-emerald-400">
-                    Terms & Conditions (13)
-                </button>
-                <button id="tabRefundBtn" onclick="switchTermsTab('refund')" class="flex-1 py-3 px-3 text-center border-b-2 border-transparent text-slate-400">
-                    Refund Policy (7)
-                </button>
-            </div>
-
-            <!-- Scrollable Body -->
-            <div class="p-4 sm:p-6 overflow-y-auto custom-scroll space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                
-                <!-- TERMS TAB -->
-                <div id="termsTabContent" class="space-y-3">
-                    <ol class="space-y-2.5 list-decimal list-inside text-xs text-slate-300">
-                        <li class="pl-1"><strong class="text-white">Nature of Report:</strong> Informational summary compiled from publicly available sources and client input. Not legal advice, valuation, or investment advice. Homelytics is not a law firm or valuer.</li>
-                        <li class="pl-1"><strong class="text-white">Scope:</strong> Covers only the project specified on the report cover.</li>
-                        <li class="pl-1"><strong class="text-white">No Guarantee:</strong> We do not guarantee accuracy, completeness, or timeliness of third-party public records.</li>
-                        <li class="pl-1"><strong class="text-white">Third-Party Content:</strong> Quoted prices and reviews belong to respective owners.</li>
-                        <li class="pl-1"><strong class="text-white">Client Responsibility:</strong> Client must independently verify facts and consult lawyers before financial decisions.</li>
-                        <li class="pl-1"><strong class="text-white">Client Supplied Info:</strong> We rely on client-supplied information as provided.</li>
-                        <li class="pl-1"><strong class="text-white">Limitation of Liability:</strong> Total liability limited strictly to the fee paid for the report.</li>
-                        <li class="pl-1"><strong class="text-white">Confidentiality:</strong> Reports are for client personal use and may not be resold without permission.</li>
-                        <li class="pl-1"><strong class="text-white">Intellectual Property:</strong> Report layout and compilation remain Homelytics property.</li>
-                        <li class="pl-1"><strong class="text-white">Delivery:</strong> Delivered electronically upon payment and detail receipt.</li>
-                        <li class="pl-1"><strong class="text-white">Changes to Terms:</strong> Terms in force at purchase apply.</li>
-                        <li class="pl-1"><strong class="text-white">Governing Law:</strong> Indian law applies (Maharashtra jurisdiction).</li>
-                        <li class="pl-1"><strong class="text-white">Contact:</strong> Homelytics Support Channel.</li>
-                    </ol>
-                </div>
-
-                <!-- REFUND TAB -->
-                <div id="refundTabContent" class="hidden space-y-3">
-                    <ol class="space-y-2.5 list-decimal list-inside text-xs text-slate-300">
-                        <li class="pl-1"><strong class="text-white">Non-Delivery:</strong> Full refund if report is not delivered within promised schedule.</li>
-                        <li class="pl-1"><strong class="text-white">Wrong Project:</strong> Re-issue or full refund if wrong project is provided due to our error.</li>
-                        <li class="pl-1"><strong class="text-white">Transcription Errors:</strong> Re-issue or partial/full refund at discretion for transcription errors.</li>
-                        <li class="pl-1"><strong class="text-white">After Delivery:</strong> Digital products are non-refundable after successful delivery.</li>
-                        <li class="pl-1"><strong class="text-white">Cancellation:</strong> Full refund if cancelled before research begins.</li>
-                        <li class="pl-1"><strong class="text-white">How to Request:</strong> Email/message support within 7 days.</li>
-                        <li class="pl-1"><strong class="text-white">Processing:</strong> Approved refunds processed in 7-10 business days.</li>
-                    </ol>
-                </div>
-
-            </div>
-
-            <!-- Drawer Footer -->
-            <div class="p-3 bg-slate-950 border-t border-slate-800 flex justify-end">
-                <button onclick="closeTermsModal()" class="bg-emerald-500 text-navy-950 font-extrabold px-4 py-2 rounded-xl text-xs active:scale-95 touch-target">
-                    I Understand
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            initRegistrationChart();
-        });
-
-        // Toggle Mobile Menu Drawer
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const openIcon = document.getElementById('menuOpenIcon');
-            const closeIcon = document.getElementById('menuCloseIcon');
-            
-            menu.classList.toggle('hidden');
-            openIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        }
-
-        // Registration Volume Chart JS
-        function initRegistrationChart() {
-            const ctx = document.getElementById('registrationChart');
-            if (!ctx) return;
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8'],
-                    datasets: [{
-                        label: 'Volume',
-                        data: [10, 11, 7, 15, 6, 12, 14, 8],
-                        backgroundColor: '#10b981',
-                        borderRadius: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 9 } } },
-                        y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', font: { size: 9 } }, beginAtZero: true }
-                    }
-                }
-            });
-        }
-
-        // Modal Controls
-        function openReportModal() {
-            document.getElementById('modalFormState').classList.remove('hidden');
-            document.getElementById('modalSuccessState').classList.add('hidden');
-            document.getElementById('reportModal').classList.remove('hidden');
-        }
-
-        function closeReportModal() {
-            document.getElementById('reportModal').classList.add('hidden');
-        }
-
-        function openTermsModal(tab = 'terms') {
-            document.getElementById('termsModal').classList.remove('hidden');
-            switchTermsTab(tab);
-        }
-
-        function closeTermsModal() {
-            document.getElementById('termsModal').classList.add('hidden');
-        }
-
-        function switchTermsTab(tab) {
-            const termsContent = document.getElementById('termsTabContent');
-            const refundContent = document.getElementById('refundTabContent');
-            const tabTermsBtn = document.getElementById('tabTermsBtn');
-            const tabRefundBtn = document.getElementById('tabRefundBtn');
-
-            if (tab === 'terms') {
-                termsContent.classList.remove('hidden');
-                refundContent.classList.add('hidden');
-                tabTermsBtn.className = "flex-1 py-3 px-3 text-center border-b-2 border-emerald-500 text-emerald-400 font-bold";
-                tabRefundBtn.className = "flex-1 py-3 px-3 text-center border-b-2 border-transparent text-slate-400 font-bold";
-            } else {
-                termsContent.classList.add('hidden');
-                refundContent.classList.remove('hidden');
-                tabTermsBtn.className = "flex-1 py-3 px-3 text-center border-b-2 border-transparent text-slate-400 font-bold";
-                tabRefundBtn.className = "flex-1 py-3 px-3 text-center border-b-2 border-emerald-500 text-emerald-400 font-bold";
-            }
-        }
-
-        // WhatsApp Form Submission Handler
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('userName').value.trim();
-            const phone = document.getElementById('userPhone').value.trim();
-            const project = document.getElementById('projectName').value.trim();
-            const city = document.getElementById('projectCity').value.trim() || 'Not specified';
-
-            const message = `Hello Homelytics,\n\nI want to request a project report.\n\n` +
-                            `*Name:* ${name}\n` +
-                            `*Phone:* ${phone}\n` +
-                            `*Project:* ${project}\n` +
-                            `*Location:* ${city}\n\n` +
-                            `Please connect with me on WhatsApp.`;
-
-            const encodedMessage = encodeURIComponent(message);
-            
-            document.getElementById('modalFormState').classList.add('hidden');
-            document.getElementById('modalSuccessState').classList.remove('hidden');
-
-            setTimeout(() => {
-                window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
-            }, 500);
-        }
-    </script>
+    function closeThankYouModal() {
+      const modal = document.getElementById("thankYouModal");
+      const card = document.getElementById("modalCard");
+      card.classList.remove("scale-100", "opacity-100");
+      card.classList.add("scale-95", "opacity-0");
+      setTimeout(() => modal.classList.add("hidden"), 200);
+    }
+  </script>
 </body>
 </html>
