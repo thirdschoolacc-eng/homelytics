@@ -3,38 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homelytics | Pre-Token Property Price Intelligence & Negotiation Dossiers</title>
-  
-  <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Never pay a token amount blind. Access verified closed transaction benchmarks, floor-rise examinations, and litigation checks for your target building across Pune & Mumbai.">
+  <title>HOMELYTICS | Know Actual Flat Prices Before You Buy</title>
+  <meta name="description" content="Find out the real agreement prices paid by other buyers in the same building. Check RERA cases and floor-rise charges before booking.">
+
+  <!-- Inter & Plus Jakarta Sans via Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-            display: ['"Space Grotesk"', 'system-ui', 'sans-serif']
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            teal: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              200: '#99f6e4',
-              500: '#14b8a6',
-              600: '#0d9488',
-              700: '#0f766e',
-              800: '#115e59',
-              900: '#134e4a',
-              950: '#042f2e'
+            bloomberg: {
+              black: '#080A0D',
+              dark: '#0E1117',
+              card: '#131821',
+              cardBorder: '#202735',
+              input: '#161C27',
+              gold: '#D4AF37',
+              goldHover: '#C5A059',
+              muted: '#838D9E',
+              silver: '#A8B3C7',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+              red: '#EF4444'
             }
           }
         }
@@ -43,596 +44,797 @@
   </script>
 
   <style>
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .num-tabular {
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum" 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0E1117;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #252D3D;
+      border-radius: 4px;
+    }
+    .bg-grid {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #specimen-dossier, #specimen-dossier * {
+        visibility: visible;
+      }
+      #specimen-dossier {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: #000 !important;
+        background: #fff !important;
+      }
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-600 selection:text-white">
 
-  <!-- ================= TOP NOTICE BAR ================= -->
-  <div class="bg-slate-900 text-slate-300 px-4 py-2 text-xs md:text-sm text-center border-b border-slate-800 flex items-center justify-center gap-2">
-    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 animate-pulse">Live</span>
-    <span>Pune &amp; Mumbai Registry Benchmark Network Active. Don't sign your token without verifying closed rates.</span>
+<body class="bg-bloomberg-black text-slate-100 font-sans antialiased min-h-screen selection:bg-bloomberg-gold selection:text-black">
+
+  <!-- Top Announcement Bar -->
+  <div class="border-b border-bloomberg-cardBorder/80 bg-bloomberg-dark px-3 sm:px-4 py-2 text-xs text-bloomberg-muted flex justify-between items-center">
+    <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap">
+      <span class="w-2 h-2 rounded-full bg-bloomberg-emerald shrink-0 animate-pulse"></span>
+      <span class="font-mono text-[11px] text-bloomberg-gold font-semibold uppercase">Independent Homebuyer Desk</span>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <span class="text-[11px] text-slate-300 hidden sm:inline">Delivered to your WhatsApp & Email within 24 Hours</span>
+    </div>
+    <div class="text-[11px] font-mono text-bloomberg-emerald shrink-0">
+      Zero Brokerage • 100% Independent
+    </div>
   </div>
 
-  <!-- ================= STICKY HEADER ================= -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-700 to-slate-900 flex items-center justify-center text-white shadow-md shadow-teal-800/20">
-            <i data-lucide="building-2" class="w-5 h-5"></i>
+  <!-- Primary Header -->
+  <header class="sticky top-0 z-40 bg-bloomberg-dark/95 backdrop-blur border-b border-bloomberg-cardBorder px-4 sm:px-6 lg:px-8 py-3">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded bg-bloomberg-card border border-bloomberg-gold/50 flex items-center justify-center font-mono font-bold text-bloomberg-gold text-base shadow-sm">
+          H
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5 leading-none">
+            <span class="font-bold tracking-wider text-base text-white font-mono">HOMELYTICS</span>
+            <span class="text-[9px] bg-bloomberg-gold/15 text-bloomberg-gold font-mono px-1 py-0.5 rounded border border-bloomberg-gold/30">INTEL</span>
           </div>
-          <div>
-            <span class="font-display font-bold text-xl tracking-tight text-slate-900 group-hover:text-teal-700 transition">HOMELYTICS</span>
-            <span class="block text-[9px] tracking-widest uppercase font-semibold text-teal-700 -mt-1">Transaction Intelligence</span>
-          </div>
-        </a>
-      </div>
+          <p class="text-[10px] text-bloomberg-muted mt-0.5">Real Flat Prices & RERA Checks</p>
+        </div>
+      </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="#how-it-works" class="hover:text-teal-700 transition">Methodology</a>
-        <a href="#video-explainer" class="hover:text-teal-700 transition">How to Negotiate</a>
-        <a href="#sample-dossier" class="hover:text-teal-700 transition">Sample Dossier</a>
-        <a href="#faq" class="hover:text-teal-700 transition">FAQ</a>
+      <!-- Quick Nav for Desktop -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
+        <a href="#specimen-dossier" class="hover:text-bloomberg-gold transition">Sample Report</a>
+        <a href="#benefits" class="hover:text-bloomberg-gold transition">How It Helps</a>
+        <button onclick="openModal('contactModal')" class="hover:text-bloomberg-gold transition">Contact Us</button>
+        <button onclick="openModal('termsModal')" class="hover:text-bloomberg-gold transition">Terms</button>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="#sample-dossier" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 bg-slate-100 hover:bg-slate-200 transition border border-slate-300">
-          <i data-lucide="file-down" class="w-3.5 h-3.5 text-teal-700"></i>
-          Sample PDF
-        </a>
-        <a href="#request-dossier" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg text-white bg-teal-700 hover:bg-teal-800 shadow-sm shadow-teal-800/30 transition">
-          <i data-lucide="search" class="w-3.5 h-3.5"></i>
-          Get Building Rates
+      <!-- Request Button -->
+      <div>
+        <a href="#order-form" class="inline-flex items-center justify-center gap-1.5 bg-bloomberg-gold hover:bg-bloomberg-goldHover text-black text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded active:scale-95 transition shadow">
+          <span>Get Report</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO & LEAD SUBMISSION FORM ================= -->
-  <section class="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden">
-    <!-- Glow Highlights -->
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 right-10 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        
-        <!-- Left: Value Proposition Pitch -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider">
-            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-teal-400"></i>
-            Pre-Token Price Protection
-          </div>
-
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.16] text-white">
-            Know What Your Neighbors <span class="text-teal-400 underline decoration-teal-500/50 underline-offset-8">Actually Paid</span> Before You Sign.
-          </h1>
-
-          <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
-            Developer sales desks quote aspirational rate cards with built-in buffers. Homelytics uncovers verified registered transaction values, floor-rise realities, and land litigation filings for your specific project.
-          </p>
-
-          <!-- Core Stat Cards -->
-          <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0">
-            <div class="bg-slate-800/80 border border-slate-700/70 p-3 rounded-xl text-left">
-              <div class="text-teal-400 font-bold text-lg sm:text-xl font-display">₹5L – ₹25L</div>
-              <div class="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">Average Negotiation Leverage</div>
-            </div>
-            <div class="bg-slate-800/80 border border-slate-700/70 p-3 rounded-xl text-left">
-              <div class="text-teal-400 font-bold text-lg sm:text-xl font-display">45 Mins</div>
-              <div class="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">WhatsApp PDF Dossier Turnaround</div>
-            </div>
-            <div class="bg-slate-800/80 border border-slate-700/70 p-3 rounded-xl text-left">
-              <div class="text-emerald-400 font-bold text-lg sm:text-xl font-display">Zero Spam</div>
-              <div class="text-[11px] text-slate-400 font-medium leading-tight mt-0.5">We Never Sell Numbers to Brokers</div>
-            </div>
-          </div>
-
-          <!-- Video Link Anchor -->
-          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-            <a href="#video-explainer" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs sm:text-sm text-slate-200 transition font-medium">
-              <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center">
-                <i data-lucide="play" class="w-3 h-3 fill-teal-400"></i>
-              </span>
-              Watch 45-Sec Negotiation Walkthrough
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Lead Capture Form Card -->
-        <div id="request-dossier" class="lg:col-span-5">
-          <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-7 text-slate-900 border border-slate-200 relative">
-            <div class="flex items-center justify-between pb-3.5 border-b border-slate-100">
-              <div>
-                <h2 class="text-base sm:text-lg font-bold text-slate-900">Request Building Dossier</h2>
-                <p class="text-xs text-slate-500">Delivered directly on WhatsApp within 45 mins</p>
-              </div>
-              <span class="inline-flex items-center px-2 py-0.5 rounded bg-teal-50 text-teal-800 text-[11px] font-bold border border-teal-200">
-                Launch Offer ₹999
-              </span>
-            </div>
-
-            <form id="leadForm" onsubmit="handleFormSubmit(event)" class="mt-4 space-y-3">
-              
-              <!-- 1. Project Name -->
-              <div>
-                <label for="projectName" class="block text-xs font-semibold text-slate-700 mb-1">Project / Society Name <span class="text-red-500">*</span></label>
-                <div class="relative">
-                  <i data-lucide="building" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
-                  <input type="text" id="projectName" required placeholder="e.g. Rohan Ekam, The Skylark, Kohinoor" 
-                         class="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
-                </div>
-              </div>
-
-              <!-- 2. Locality & City Dropdown -->
-              <div class="grid grid-cols-2 gap-2.5">
-                <div>
-                  <label for="locality" class="block text-xs font-semibold text-slate-700 mb-1">Micro-Market / Area <span class="text-red-500">*</span></label>
-                  <input type="text" id="locality" required placeholder="e.g. Balewadi, Ravet, Baner" 
-                         class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
-                </div>
-                <div>
-                  <label for="city" class="block text-xs font-semibold text-slate-700 mb-1">City <span class="text-red-500">*</span></label>
-                  <select id="city" required class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700 bg-white">
-                    <option value="Pune" selected>Pune</option>
-                    <option value="Mumbai (MMR)">Mumbai (MMR)</option>
-                    <option value="Thane / Navi Mumbai">Thane / Navi Mumbai</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- 3. Configuration & Carpet Area -->
-              <div class="grid grid-cols-2 gap-2.5">
-                <div>
-                  <label for="config" class="block text-xs font-semibold text-slate-700 mb-1">Configuration <span class="text-red-500">*</span></label>
-                  <select id="config" required class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700 bg-white">
-                    <option value="2 BHK">2 BHK</option>
-                    <option value="3 BHK" selected>3 BHK</option>
-                    <option value="4 BHK">4 BHK</option>
-                    <option value="Penthouse / Duplex">Penthouse / Duplex</option>
-                    <option value="1 BHK">1 BHK</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="carpetArea" class="block text-xs font-semibold text-slate-700 mb-1">Carpet Area (sq ft)</label>
-                  <input type="number" id="carpetArea" placeholder="e.g. 969, 1450" 
-                         class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
-                </div>
-              </div>
-
-              <!-- 4. Flat Series / Unit Number -->
-              <div>
-                <label for="unitSeries" class="block text-xs font-semibold text-slate-700 mb-1">Flat Series or Unit # (Optional)</label>
-                <input type="text" id="unitSeries" placeholder="e.g. Flat 1404, Series 02, or Tower B" 
-                       class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
-                <span class="text-[10px] text-slate-500">Enables verification of specific floor-rise and layout precedents.</span>
-              </div>
-
-              <!-- 5. Buyer Contact & WhatsApp -->
-              <div class="pt-2 border-t border-slate-100">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div>
-                    <label for="userName" class="block text-xs font-semibold text-slate-700 mb-1">Your Name <span class="text-red-500">*</span></label>
-                    <input type="text" id="userName" required placeholder="e.g. Vikram Joshi" 
-                           class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
-                  </div>
-                  <div>
-                    <label for="whatsappNumber" class="block text-xs font-semibold text-slate-700 mb-1">Your WhatsApp No. <span class="text-red-500">*</span></label>
-                    <div class="relative">
-                      <span class="absolute left-3 top-2 text-xs font-bold text-slate-400">+91</span>
-                      <input type="tel" id="whatsappNumber" required pattern="[0-9]{10}" placeholder="9876543210" 
-                             class="w-full pl-10 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:border-teal-700">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-              <button type="submit" class="w-full mt-2 py-3 px-4 rounded-xl font-bold text-white bg-teal-700 hover:bg-teal-800 transition shadow-lg shadow-teal-700/20 flex items-center justify-center gap-2 group">
-                <i data-lucide="message-circle" class="w-4 h-4 fill-emerald-400 text-emerald-400"></i>
-                <span>Get Closed Rates on WhatsApp</span>
-                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
-              </button>
-
-              <div class="flex items-center justify-center gap-4 text-[10px] text-slate-400 pt-1">
-                <span class="flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3 text-emerald-600"></i> Strict Privacy</span>
-                <span>•</span>
-                <span>No Broker Cold Calls</span>
-                <span>•</span>
-                <span>UPI Enabled</span>
-              </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= METHODOLOGY: WHAT IS IN THE DOSSIER ================= -->
-  <section id="how-it-works" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Transaction Intelligence Framework</span>
-        <h2 class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Four Data Layers That Give You Settlement Leverage</h2>
-        <p class="mt-2 text-slate-600 text-xs sm:text-sm">Brokers negotiate with sales rhetoric. Homelytics arms you with statutory transaction precedent.</p>
-      </div>
-
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
-          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">1</div>
-          <h3 class="mt-4 font-bold text-slate-900 text-base">Baseline &amp; Target Median</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Statistically derived 25th percentile and median transaction bands give you a hard mathematical anchor for your counter-offer.
-          </p>
-        </div>
-
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
-          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">2</div>
-          <h3 class="mt-4 font-bold text-slate-900 text-base">Floor-Rise Examination</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Direct proof of whether buyers paid steep floor premiums or if identical agreement values closed across floors 8 through 20.
-          </p>
-        </div>
-
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
-          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">3</div>
-          <h3 class="mt-4 font-bold text-slate-900 text-base">Developer Sales Momentum</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Monthly registration velocity tracking lets you see if inventory absorption is stalling, granting you quarter-end bargaining power.
-          </p>
-        </div>
-
-        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 hover:border-teal-600 transition">
-          <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center font-bold">4</div>
-          <h3 class="mt-4 font-bold text-slate-900 text-base">Litigation &amp; Land Suits</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            A comprehensive catalog of declared civil partition suits, High Court revision petitions, and revenue appeals touching the parcel.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= EXPLAINER VIDEO SECTION ================= -->
-  <section id="video-explainer" class="py-16 bg-slate-100 border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">45-Second Strategy Demo</span>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Watch How Real Buyers Use This At The Sales Desk</h2>
-      <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-xl mx-auto">
-        Learn how quoting recent registered floor benchmarks shifts control from the sales executive to you.
-      </p>
-
-      <!-- Video Player Container (Easily Replaceable with your YouTube or MP4 Link) -->
-      <div class="mt-8 relative rounded-2xl overflow-hidden shadow-2xl border border-slate-300 bg-slate-900 aspect-video max-w-2xl mx-auto flex items-center justify-center">
-        
-        <!-- ========================================================================= -->
-        <!-- TO EMBED YOUR YOUTUBE VIDEO:                                              -->
-        <!-- 1. Upload your 45-sec video to YouTube as 'Unlisted'.                     -->
-        <!-- 2. Replace 'YOUR_YOUTUBE_ID_HERE' with your real 11-character video ID.   -->
-        <!-- ========================================================================= -->
-        <iframe 
-          id="explainerIframe"
-          class="w-full h-full"
-          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" 
-          title="Homelytics Negotiation Strategy Video" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-        
-      </div>
-      <p class="text-[11px] text-slate-500 mt-3 italic">
-        Tip: To link your own video, open index.html and update the YouTube iframe src URL above.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= SPECIMEN REPORT SECTION (AURA HEIGHTS ₹2-3 CR) ================= -->
-  <section id="sample-dossier" class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="relative bg-grid py-10 sm:py-16 border-b border-bloomberg-cardBorder overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Specimen Intelligence Dossier</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Examine A Sample Homelytics Report</h2>
-          <p class="text-xs sm:text-sm text-slate-600 mt-1">Specimen extract for luxury configuration: 1,450 sq ft 3 BHK in the ₹2.00 Cr – ₹3.00 Cr range.</p>
-        </div>
-        
-        <!-- Direct PDF Download Button -->
-        <a href="homelytics_sample_dummy_report.pdf" download class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs shadow-md shadow-teal-700/20 self-start md:self-auto transition">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          Download Sample PDF Dossier
+      <!-- Trust Tag -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-bloomberg-cardBorder bg-bloomberg-card text-xs font-mono text-slate-300 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-bloomberg-emerald"></span>
+        <span>Independent Research for Homebuyers</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-bloomberg-gold">No Broker Commission</span>
+      </div>
+
+      <!-- Main Headline matching Instagram Ad -->
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Know what your neighbors <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-bloomberg-gold via-yellow-200 to-bloomberg-gold">actually paid</span> before you sign.
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6 font-normal">
+        Don’t buy a home looking only at developer quotation sheets. We provide the <strong>real registered agreement prices</strong> paid by other buyers in the same project, along with <strong>RERA litigations</strong> and floor-rise pricing checks.
+      </p>
+
+      <!-- Fast Action Buttons (Mobile-friendly sizing) -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-6">
+        <a href="#order-form" class="inline-flex items-center justify-center gap-2 bg-bloomberg-gold hover:bg-bloomberg-goldHover text-black font-bold text-sm tracking-wide px-6 py-3.5 rounded shadow-lg active:scale-95 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Get Your Building Report — ₹2,500</span>
+        </a>
+        <a href="#specimen-dossier" class="inline-flex items-center justify-center gap-2 border border-bloomberg-cardBorder hover:border-slate-500 bg-bloomberg-card/80 text-slate-200 font-medium text-sm px-5 py-3.5 rounded transition">
+          <svg class="w-4 h-4 text-bloomberg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          <span>See Sample Report Below</span>
         </a>
       </div>
 
-      <!-- Specimen Card Mockup -->
-      <div class="bg-slate-50 rounded-2xl border border-slate-300 shadow-sm p-6 sm:p-8 space-y-6">
-        
-        <!-- Header -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
-          <div>
-            <span class="text-[9px] font-bold text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded uppercase tracking-wider">Specimen / Public Sample</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-1.5">Aura Heights (Phase 1)</h3>
-            <p class="text-xs text-slate-500">Westridge Valley, Pune • 3 BHK Luxury (1,450 sq ft Carpet) • Apex Living Infra LLP</p>
-          </div>
-          <div class="text-left sm:text-right">
-            <span class="text-xs text-slate-400">Sample Date: Oct 2026</span>
-            <div class="text-xs font-bold text-emerald-700">24 Registered Sales Analyzed</div>
-          </div>
+      <!-- Trust Badges (Plain English) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-2xl mx-auto pt-4 text-left">
+        <div class="flex items-center gap-2 p-2.5 rounded bg-bloomberg-card/70 border border-bloomberg-cardBorder">
+          <span class="w-5 h-5 rounded-full bg-bloomberg-gold/20 text-bloomberg-gold flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
+          <span class="text-xs text-slate-200">Real Registered Agreement Prices</span>
         </div>
-
-        <!-- 3 Core Negotiation Anchors -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
-            <span class="text-[10px] uppercase font-bold text-slate-500">Baseline Offer (25th %tile)</span>
-            <div class="text-2xl font-extrabold text-slate-900 mt-1">₹2.31 Cr*</div>
-            <p class="text-xs text-slate-500 mt-1">Agreement: ₹2.04 Cr (₹14,068 psf). Strong opening counter-anchor.</p>
-          </div>
-
-          <div class="border-2 border-teal-700 rounded-xl p-4 bg-teal-50/70 shadow-sm relative">
-            <span class="absolute -top-2.5 right-3 bg-teal-800 text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">Target Benchmark</span>
-            <span class="text-[10px] uppercase font-bold text-teal-800">Target Benchmark (Median)</span>
-            <div class="text-2xl font-extrabold text-teal-900 mt-1">₹2.46 Cr*</div>
-            <p class="text-xs text-teal-800 mt-1">Agreement: ₹2.18 Cr (₹15,034 psf). Recommended signing equilibrium.</p>
-          </div>
-
-          <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
-            <span class="text-[10px] uppercase font-bold text-slate-500">Upper Ceiling (90th %tile)</span>
-            <div class="text-2xl font-extrabold text-slate-900 mt-1">₹2.71 Cr*</div>
-            <p class="text-xs text-slate-500 mt-1">Agreement: ₹2.40 Cr (₹16,551 psf). Absolute walk-away threshold.</p>
-          </div>
+        <div class="flex items-center gap-2 p-2.5 rounded bg-bloomberg-card/70 border border-bloomberg-cardBorder">
+          <span class="w-5 h-5 rounded-full bg-bloomberg-gold/20 text-bloomberg-gold flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
+          <span class="text-xs text-slate-200">Zero Brokerage. 100% Independent</span>
         </div>
+        <div class="flex items-center gap-2 p-2.5 rounded bg-bloomberg-card/70 border border-bloomberg-cardBorder">
+          <span class="w-5 h-5 rounded-full bg-bloomberg-gold/20 text-bloomberg-gold flex items-center justify-center text-xs shrink-0 font-bold">✓</span>
+          <span class="text-xs text-slate-200">RERA Litigations & Complaint Checks</span>
+        </div>
+      </div>
 
-        <!-- Specimen Extract Table -->
+      <!-- Zero Spam Guarantee Banner -->
+      <div class="mt-4 p-3 rounded bg-bloomberg-card border border-bloomberg-emerald/30 text-left flex items-start gap-2.5 max-w-2xl mx-auto">
+        <span class="text-bloomberg-emerald text-sm leading-none mt-0.5">🛡️</span>
+        <p class="text-xs text-slate-300 leading-relaxed font-sans">
+          <strong class="text-bloomberg-emerald">Zero Spam Guarantee:</strong> We <strong>never</strong> call you to sell flats, brokers, or loans. Your WhatsApp number is only used to send your requested 5-page PDF report within 24 hours.
+        </p>
+      </div>
+
+      <!-- Dummy Data Notice -->
+      <div class="mt-3 p-2.5 rounded bg-amber-950/20 border border-amber-500/30 text-left max-w-2xl mx-auto">
+        <p class="text-[11px] text-amber-200/80 leading-relaxed font-mono">
+          <strong class="text-amber-400 uppercase">Sample Preview Notice:</strong> All project names (e.g. Aura Heights), unit numbers, and figures shown on this sample preview are illustrative dummy values for demonstration.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Specimen Dossier (Interactive & Mobile-Friendly Sample Report) -->
+  <section id="specimen-dossier" class="py-10 sm:py-16 px-3 sm:px-6 lg:px-8 border-b border-bloomberg-cardBorder">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
         <div>
-          <h4 class="text-xs font-bold uppercase text-slate-700 mb-2">Registered Closed Transactions (Specimen Extract)</h4>
-          <div class="overflow-x-auto border border-slate-200 rounded-lg bg-white">
-            <table class="w-full text-left text-xs text-slate-700">
-              <thead class="bg-slate-100 text-slate-800 font-semibold border-b border-slate-200">
-                <tr>
-                  <th class="p-2.5">Reg. Date</th>
-                  <th class="p-2.5">Tower</th>
-                  <th class="p-2.5">Unit #</th>
-                  <th class="p-2.5">Floor</th>
-                  <th class="p-2.5">Agreement Value (₹)</th>
-                  <th class="p-2.5">Est. All-In Outlay (× 1.13)*</th>
-                  <th class="p-2.5">Est. Rate psf</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr class="hover:bg-slate-50">
-                  <td class="p-2.5 font-medium">19 Sep</td>
-                  <td class="p-2.5">Tower Alpha</td>
-                  <td class="p-2.5 font-mono">2104</td>
-                  <td class="p-2.5">21st</td>
-                  <td class="p-2.5 font-bold">₹2,24,50,000</td>
-                  <td class="p-2.5 font-bold text-teal-800">₹2,53,68,500</td>
-                  <td class="p-2.5">₹17,495</td>
-                </tr>
-                <tr class="bg-teal-50/40 hover:bg-teal-50/60">
-                  <td class="p-2.5 font-medium">04 Sep</td>
-                  <td class="p-2.5">Tower Beta</td>
-                  <td class="p-2.5 font-mono">1402</td>
-                  <td class="p-2.5">14th</td>
-                  <td class="p-2.5 font-bold">₹2,17,50,000</td>
-                  <td class="p-2.5 font-bold text-teal-800">₹2,45,77,500</td>
-                  <td class="p-2.5">₹16,950</td>
-                </tr>
-                <tr class="bg-teal-50/40 hover:bg-teal-50/60">
-                  <td class="p-2.5 font-medium">12 Aug</td>
-                  <td class="p-2.5">Tower Alpha</td>
-                  <td class="p-2.5 font-mono">802</td>
-                  <td class="p-2.5">8th</td>
-                  <td class="p-2.5 font-bold">₹2,17,50,000</td>
-                  <td class="p-2.5 font-bold text-teal-800">₹2,45,77,500</td>
-                  <td class="p-2.5">₹16,950</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="flex items-center gap-2 font-mono text-xs text-bloomberg-gold uppercase font-semibold mb-1">
+            <span class="w-2 h-2 bg-bloomberg-gold rounded-full"></span>
+            Sample 5-Page Dossier Preview
           </div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 mt-2 gap-2">
-            <span>*All-in calculation: Agreement × 1.13 (Includes 7% Stamp Duty + 5% GST + 1% Registration).</span>
-            <span class="text-teal-800 font-semibold">Floors 8, 11, and 14 registered at identical base rates.</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white">
+            What You Receive in Your Report
+          </h2>
+          <p class="text-xs text-slate-400 mt-0.5">
+            Example shown below for a sample 3 BHK apartment (Aura Heights).
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="px-3 py-1.5 rounded border border-bloomberg-cardBorder bg-bloomberg-card text-xs text-slate-300 hover:text-white font-mono flex items-center gap-1.5 transition">
+            <svg class="w-3.5 h-3.5 text-bloomberg-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            Print / Save PDF
+          </button>
+          <a href="#order-form" class="px-3.5 py-1.5 rounded bg-bloomberg-gold hover:bg-bloomberg-goldHover text-black text-xs font-bold uppercase tracking-wider transition">
+            Order for Your Building
+          </a>
+        </div>
+      </div>
+
+      <!-- Report Card Box -->
+      <div class="bg-bloomberg-card border border-bloomberg-cardBorder rounded-lg overflow-hidden shadow-xl">
+        
+        <!-- Header Strip of Dossier -->
+        <div class="p-4 sm:p-5 bg-gradient-to-r from-bloomberg-card via-[#171D27] to-bloomberg-card border-b border-bloomberg-cardBorder">
+          <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+            <div>
+              <span class="text-[10px] font-mono tracking-wider uppercase bg-bloomberg-gold/15 text-bloomberg-gold px-2 py-0.5 rounded border border-bloomberg-gold/30 font-semibold">
+                PRICING & RERA BENCHMARK REPORT
+              </span>
+              <h3 class="text-lg sm:text-xl font-bold text-white mt-1">Aura Heights (Phase 1)</h3>
+              <p class="text-xs text-slate-300">Westridge Valley, Pune West • 3 BHK Luxury (1,450 sq ft)</p>
+            </div>
+            <div class="text-left sm:text-right font-mono text-xs">
+              <span class="text-bloomberg-muted text-[10px] uppercase">RERA Project Sample:</span>
+              <p class="text-bloomberg-gold font-bold">P52100026099 (Sample)</p>
+              <p class="text-[10px] text-slate-400">24 Real Flat Sales Analyzed</p>
+            </div>
           </div>
         </div>
 
-        <!-- Sample Litigation Disclosure Box -->
-        <div class="p-3.5 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 leading-relaxed">
-          <strong>Litigation Precedent Analysis:</strong> The specimen dossier maps 10 active and disposed civil partition and land demarcation matters across the Pune Civil Court and High Court, reminding buyers to obtain independent title search certifications prior to token release.
+        <!-- 3 Simple Price Indicators (Plain English: Real Agreement Prices) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-bloomberg-cardBorder border-b border-bloomberg-cardBorder bg-bloomberg-dark">
+          
+          <div class="p-4">
+            <div class="text-xs font-mono text-bloomberg-muted mb-1">LOWEST RECORDED DEAL</div>
+            <div class="text-2xl font-bold text-white font-mono num-tabular">₹2.04 Cr</div>
+            <p class="text-xs text-bloomberg-gold font-mono mt-0.5">Est. All-In: ₹2.31 Cr</p>
+            <p class="text-xs text-slate-400 mt-1">Best counter-offer starting point. Other buyers bought at this rate.</p>
+          </div>
+
+          <div class="p-4 bg-bloomberg-card/50">
+            <div class="text-xs font-mono text-bloomberg-gold font-semibold mb-1">AVERAGE AGREEMENT PRICE</div>
+            <div class="text-2xl font-bold text-bloomberg-gold font-mono num-tabular">₹2.18 Cr</div>
+            <p class="text-xs text-white font-mono mt-0.5">Est. All-In: ₹2.46 Cr</p>
+            <p class="text-xs text-slate-300 mt-1">What most buyers in Towers A & B actually agreed on.</p>
+          </div>
+
+          <div class="p-4">
+            <div class="text-xs font-mono text-bloomberg-muted mb-1">HIGHEST PAID (UPPER FLOORS)</div>
+            <div class="text-2xl font-bold text-slate-200 font-mono num-tabular">₹2.40 Cr</div>
+            <p class="text-xs text-bloomberg-gold font-mono mt-0.5">Est. All-In: ₹2.71 Cr</p>
+            <p class="text-xs text-slate-400 mt-1">Maximum price paid for top floors with premium view.</p>
+          </div>
+
+        </div>
+
+        <!-- Analytical Advice in Easy English -->
+        <div class="p-4 bg-[#0F131A] border-b border-bloomberg-cardBorder space-y-2.5 text-xs">
+          <div class="p-3 rounded bg-bloomberg-card border border-bloomberg-cardBorder text-slate-200 leading-relaxed">
+            <strong class="text-bloomberg-gold">Homebuyer Advice:</strong> Registered agreements show other buyers paid around <span class="text-white font-bold font-mono">₹2.04 Cr to ₹2.18 Cr</span> (agreement value). If the sales team is quoting above <span class="text-white font-bold font-mono">₹2.65 Cr</span> all-in, you have clear factual proof to ask for a ₹15 to ₹20 Lakh discount.
+          </div>
+        </div>
+
+        <!-- Tabbed Specimen Data -->
+        <div class="border-b border-bloomberg-cardBorder bg-bloomberg-dark px-3 flex flex-wrap gap-1.5 pt-2" id="specimen-tabs">
+          <button onclick="switchTab('tab-deals')" id="btn-tab-deals" class="tab-btn px-3 py-2 text-xs font-mono font-medium rounded-t border-b-2 border-bloomberg-gold text-bloomberg-gold bg-bloomberg-card">
+            1. Actual Flat Price Log (12 Flats)
+          </button>
+          <button onclick="switchTab('tab-floor')" id="btn-tab-floor" class="tab-btn px-3 py-2 text-xs font-mono font-medium text-slate-400 hover:text-white transition">
+            2. Floor-Rise Truth
+          </button>
+          <button onclick="switchTab('tab-rera')" id="btn-tab-rera" class="tab-btn px-3 py-2 text-xs font-mono font-medium text-slate-400 hover:text-white transition">
+            3. RERA Litigations & Complaints
+          </button>
+        </div>
+
+        <!-- TAB 1: Actual Flat Registration Price Log -->
+        <div id="tab-deals" class="tab-pane p-3 sm:p-5 overflow-x-auto custom-scrollbar">
+          <div class="flex items-center justify-between mb-2 text-xs font-mono">
+            <span class="text-white font-bold">Recent Registered Agreements (1,450 sq ft 3 BHK Flats)</span>
+            <span class="text-bloomberg-muted text-[11px] hidden sm:inline">*All-In = Agr + 7% Stamp + 5% GST + 1% Reg</span>
+          </div>
+          <p class="text-[11px] text-slate-400 mb-3 sm:hidden">Swipe sideways to see full prices & dates &rarr;</p>
+
+          <table class="w-full text-left font-mono text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-bloomberg-cardBorder bg-[#171D27] text-bloomberg-muted uppercase text-[10px]">
+                <th class="py-2 px-2.5">Date</th>
+                <th class="py-2 px-2.5">Tower</th>
+                <th class="py-2 px-2.5">Flat No.</th>
+                <th class="py-2 px-2.5">Floor</th>
+                <th class="py-2 px-2.5 text-right">Agreement Price</th>
+                <th class="py-2 px-2.5 text-right text-bloomberg-gold">Est. All-In Cost</th>
+                <th class="py-2 px-2.5 text-right hidden sm:table-cell">Rate / sq ft</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-bloomberg-cardBorder/60 num-tabular text-slate-200">
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">19 Sep</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">2104</td>
+                <td class="py-2 px-2.5">21st</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,24,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,53,68,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,483</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">04 Sep</td>
+                <td class="py-2 px-2.5 text-slate-300">Beta</td>
+                <td class="py-2 px-2.5 font-bold text-white">1402</td>
+                <td class="py-2 px-2.5">14th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,17,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,45,77,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,000</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">25 Aug</td>
+                <td class="py-2 px-2.5 text-slate-300">Beta</td>
+                <td class="py-2 px-2.5 font-bold text-white">905</td>
+                <td class="py-2 px-2.5">9th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,17,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,45,77,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,000</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">12 Aug</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">1102</td>
+                <td class="py-2 px-2.5">11th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,17,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,45,77,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,000</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">12 Aug</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">802</td>
+                <td class="py-2 px-2.5">8th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,17,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,45,77,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,000</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">28 Jul</td>
+                <td class="py-2 px-2.5 text-slate-300">Beta</td>
+                <td class="py-2 px-2.5 font-bold text-white">1601</td>
+                <td class="py-2 px-2.5">16th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,21,00,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,49,73,000</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,241</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">14 Jul</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">1204</td>
+                <td class="py-2 px-2.5">12th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,18,00,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,46,34,000</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,034</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">28 Jun</td>
+                <td class="py-2 px-2.5 text-slate-300">Beta</td>
+                <td class="py-2 px-2.5 font-bold text-white">1704</td>
+                <td class="py-2 px-2.5">17th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,24,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,53,68,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,483</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">15 Jun</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">1001</td>
+                <td class="py-2 px-2.5">10th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,17,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,45,77,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,000</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">29 May</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">1802</td>
+                <td class="py-2 px-2.5">18th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,23,00,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,51,99,000</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,379</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">18 May</td>
+                <td class="py-2 px-2.5 text-slate-300">Beta</td>
+                <td class="py-2 px-2.5 font-bold text-white">703</td>
+                <td class="py-2 px-2.5">7th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,14,00,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,41,82,000</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹14,758</td>
+              </tr>
+              <tr class="hover:bg-bloomberg-cardBorder/30">
+                <td class="py-2 px-2.5">02 May</td>
+                <td class="py-2 px-2.5 text-slate-300">Alpha</td>
+                <td class="py-2 px-2.5 font-bold text-white">904</td>
+                <td class="py-2 px-2.5">9th</td>
+                <td class="py-2 px-2.5 text-right font-medium">₹2,17,50,000</td>
+                <td class="py-2 px-2.5 text-right font-bold text-bloomberg-gold">₹2,45,77,500</td>
+                <td class="py-2 px-2.5 text-right text-slate-400 hidden sm:table-cell">₹15,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TAB 2: Floor-Rise Truth -->
+        <div id="tab-floor" class="tab-pane hidden p-4 sm:p-5">
+          <div class="mb-3">
+            <h4 class="text-sm font-bold text-white font-mono uppercase">Floor-Rise Negotiation Truth</h4>
+            <p class="text-xs text-slate-300 mt-1">Builders often ask ₹60 to ₹80 extra per sq ft for higher floors. Here is what other buyers actually paid:</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <div class="p-3 rounded border border-bloomberg-cardBorder bg-[#171D27]">
+              <span class="text-[10px] text-bloomberg-muted uppercase font-mono">Floors 8, 11 & 14</span>
+              <div class="text-xl font-bold font-mono text-white mt-0.5">₹2,17,50,000 (Identical)</div>
+              <p class="text-xs text-bloomberg-emerald font-semibold mt-1">₹0 extra floor rise charged!</p>
+            </div>
+            <div class="p-3 rounded border border-bloomberg-cardBorder bg-[#171D27]">
+              <span class="text-[10px] text-bloomberg-muted uppercase font-mono">17th Floor vs 21st Floor</span>
+              <div class="text-xl font-bold font-mono text-white mt-0.5">₹2,24,50,000 (Same Price)</div>
+              <p class="text-xs text-bloomberg-emerald font-semibold mt-1">No additional price jump for 4 higher floors.</p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded bg-bloomberg-dark border border-bloomberg-cardBorder text-xs text-slate-300 leading-relaxed font-sans">
+            💡 <strong>Negotiation Tip:</strong> When the builder's sales manager tells you that higher floors have fixed extra charges, show them this data. In most projects, earlier buyers bought 11th and 14th floor flats at the exact same base rate as the 8th floor.
+          </div>
+        </div>
+
+        <!-- TAB 3: RERA Litigations & Complaints -->
+        <div id="tab-rera" class="tab-pane hidden p-4 sm:p-5">
+          <div class="mb-3">
+            <h4 class="text-sm font-bold text-white font-mono uppercase">RERA Litigations & Complaints Check</h4>
+            <p class="text-xs text-slate-300 mt-1">We check all official RERA consumer arbitration disputes, delivery delay complaints, and legal proceedings filed under the project RERA registration.</p>
+          </div>
+
+          <div class="space-y-3 font-mono text-xs">
+            <div class="p-3 rounded bg-[#171D27] border border-bloomberg-cardBorder">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-white font-bold">RERA Registration Status</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-950 text-bloomberg-emerald border border-emerald-500/30 font-bold">ACTIVE & VALID</span>
+              </div>
+              <p class="text-slate-300 font-sans text-xs">Target completion date confirmed as December 2028 per quarterly filings.</p>
+            </div>
+
+            <div class="p-3 rounded bg-[#171D27] border border-bloomberg-cardBorder">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-white font-bold">RERA Consumer Court Complaints</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-950 text-bloomberg-emerald border border-emerald-500/30 font-bold">0 OPEN COMPLAINTS</span>
+              </div>
+              <p class="text-slate-300 font-sans text-xs">No pending execution complaints or consumer arbitration cases filed by previous buyers for delayed possession or layout alterations.</p>
+            </div>
+
+            <div class="p-3 rounded bg-[#171D27] border border-bloomberg-cardBorder">
+              <div class="flex items-center justify-between text-xs mb-1">
+                <span class="text-white font-bold">RERA Land & Encumbrance Disclosures</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-amber-950 text-amber-400 border border-amber-500/30 font-bold">DISCLOSURES ATTACHED</span>
+              </div>
+              <p class="text-slate-300 font-sans text-xs">Project land parcel has historical family partition and boundary demarcation proceedings listed in disclosures. Recommended to verify with an advocate that Tower 1 has clear possession.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dossier Footer -->
+        <div class="p-3 bg-[#0A0D12] border-t border-bloomberg-cardBorder flex flex-col sm:flex-row justify-between items-center text-[11px] text-bloomberg-muted font-mono gap-1">
+          <span>HOMELYTICS SAMPLE REPORT • DELIVERED IN 24 HOURS</span>
+          <span class="text-slate-500">Includes 5 pages of price trends, flat logs & RERA checks</span>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- ================= FAQ SECTION ================= -->
-  <section id="faq" class="py-16 bg-slate-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Questions &amp; Answers</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Frequently Asked Questions</h2>
+  <!-- How It Helps Homebuyers (Simple English) -->
+  <section id="benefits" class="py-10 sm:py-16 bg-bloomberg-dark border-b border-bloomberg-cardBorder px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-mono text-bloomberg-gold uppercase font-semibold">Buyer Protection</span>
+        <h2 class="text-xl sm:text-3xl font-bold text-white mt-1">How This 5-Page Report Helps You</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-2">Buying a flat is usually your biggest life savings. Having exact numbers stops sales agents from overcharging you.</p>
       </div>
 
-      <div class="space-y-3.5">
-        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
-            <span>Where do these transaction benchmarks come from?</span>
-            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
-          </summary>
-          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Our benchmarks are extracted from verified, registered property transaction deeds and statutory regulatory filings in Maharashtra. You receive certified agreement values rather than unverified portal listings or developer marketing brochures.
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        
+        <div class="p-5 rounded-lg bg-bloomberg-card border border-bloomberg-cardBorder">
+          <div class="w-8 h-8 rounded bg-bloomberg-gold/15 text-bloomberg-gold flex items-center justify-center font-mono font-bold text-sm mb-3">
+            01
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1.5">Real Flat Agreement Rates</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            See the exact price other families agreed to in recent months. Walk into the builder's sales office knowing their bottom price.
           </p>
-        </details>
+        </div>
 
-        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
-            <span>How is the "Estimated All-In Outlay" calculated?</span>
-            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
-          </summary>
-          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            While the Agreement Value is the exact statutory figure, we project your total cash requirement using the transparent formula: <em>Agreement Value × 1.13</em>. This incorporates 7% Maharashtra Stamp Duty + 5% GST on under-construction property + 1% statutory registration and local levies.
+        <div class="p-5 rounded-lg bg-bloomberg-card border border-bloomberg-cardBorder">
+          <div class="w-8 h-8 rounded bg-bloomberg-gold/15 text-bloomberg-gold flex items-center justify-center font-mono font-bold text-sm mb-3">
+            02
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1.5">Floor-Rise Reality</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Builders often add ₹60–₹80 per sq ft for higher floors. We show you if others paid extra or got high floors at the same base price.
           </p>
-        </details>
+        </div>
 
-        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
-            <span>Will I receive calls from real estate brokers or agents?</span>
-            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
-          </summary>
-          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            <strong>Never.</strong> Homelytics is an independent transaction intelligence service, not a brokerage. We never sell, rent, or share buyer contact information with developers or channel partners.
+        <div class="p-5 rounded-lg bg-bloomberg-card border border-bloomberg-cardBorder">
+          <div class="w-8 h-8 rounded bg-bloomberg-gold/15 text-bloomberg-gold flex items-center justify-center font-mono font-bold text-sm mb-3">
+            03
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1.5">RERA Litigations Check</h3>
+          <p class="text-xs text-slate-300 leading-relaxed font-sans">
+            Know about any pending RERA consumer complaints, possession delay issues, or legal disputes before you pay non-refundable token money.
           </p>
-        </details>
+        </div>
 
-        <details class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-sm sm:text-base">
-            <span>Does this report replace an advocate's Title Search Report?</span>
-            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition"></i>
-          </summary>
-          <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            No. Our dossiers provide commercial transaction benchmarks, rate analyses, and regulatory litigation compilations. Buyers must always engage an independent property lawyer to conduct physical search reports at the sub-registrar office before executing final deeds.
-          </p>
-        </details>
       </div>
+
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <span class="font-display font-bold text-white text-base tracking-tight">HOMELYTICS</span>
-        <p class="text-slate-500 mt-0.5">Proprietary Real Estate Price Discovery &amp; Transaction Intelligence.</p>
+  <!-- Lead Form (Simplified English & Clear Pricing) -->
+  <section id="order-form" class="py-10 sm:py-16 px-3 sm:px-6 lg:px-8 border-b border-bloomberg-cardBorder bg-bloomberg-black">
+    <div class="max-w-2xl mx-auto">
+      
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono text-bloomberg-gold bg-bloomberg-gold/10 border border-bloomberg-gold/30 uppercase font-semibold mb-2">
+          Fast Homebuyer Request
+        </div>
+        <h2 class="text-xl sm:text-3xl font-bold text-white">Get Your Building Report</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+          Submit your target society details below. Our analyst team prepares your custom 5-page report within 24 hours.
+        </p>
       </div>
-      <div class="text-center sm:text-right text-slate-500">
-        <p>© 2026 Homelytics Data Labs. All rights reserved.</p>
-        <p class="text-[11px] mt-0.5">Coverage: Pune &amp; Mumbai (MMR)</p>
+
+      <!-- Form Box -->
+      <div class="bg-bloomberg-card border border-bloomberg-cardBorder rounded-lg p-5 sm:p-7 shadow-xl">
+        
+        <form id="dossierForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-mono text-slate-200 uppercase mb-1 font-medium">Project / Building Name *</label>
+              <input type="text" name="projectName" required placeholder="e.g. Godrej Horizon, Lodha Park" 
+                     class="w-full bg-bloomberg-input border border-bloomberg-cardBorder rounded px-3.5 py-3 text-sm text-white focus:outline-none focus:border-bloomberg-gold transition font-sans placeholder-slate-500">
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-200 uppercase mb-1 font-medium">Area / Locality *</label>
+              <input type="text" name="locality" required placeholder="e.g. Baner, Pune or Thane West" 
+                     class="w-full bg-bloomberg-input border border-bloomberg-cardBorder rounded px-3.5 py-3 text-sm text-white focus:outline-none focus:border-bloomberg-gold transition font-sans placeholder-slate-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-mono text-slate-200 uppercase mb-1 font-medium">Flat Configuration *</label>
+              <select name="configuration" required class="w-full bg-bloomberg-input border border-bloomberg-cardBorder rounded px-3.5 py-3 text-sm text-white focus:outline-none focus:border-bloomberg-gold transition font-sans">
+                <option value="" disabled selected>Select BHK / Size</option>
+                <option value="1 BHK">1 BHK (400 - 550 sq ft)</option>
+                <option value="2 BHK">2 BHK (650 - 900 sq ft)</option>
+                <option value="3 BHK Luxury">3 BHK Luxury (1,100 - 1,600 sq ft)</option>
+                <option value="4 BHK / Penthouse">4 BHK / Penthouse (1,800+ sq ft)</option>
+                <option value="Commercial / Other">Commercial / Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-200 uppercase mb-1 font-medium">Quoted Price by Builder (Optional)</label>
+              <input type="text" name="quotedPrice" placeholder="e.g. ₹2.65 Cr All-In" 
+                     class="w-full bg-bloomberg-input border border-bloomberg-cardBorder rounded px-3.5 py-3 text-sm text-white focus:outline-none focus:border-bloomberg-gold transition font-sans placeholder-slate-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-mono text-slate-200 uppercase mb-1 font-medium">WhatsApp Number *</label>
+              <input type="tel" name="whatsapp" required placeholder="10-digit mobile number" 
+                     class="w-full bg-bloomberg-input border border-bloomberg-cardBorder rounded px-3.5 py-3 text-sm text-white focus:outline-none focus:border-bloomberg-gold transition font-mono placeholder-slate-500">
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-200 uppercase mb-1 font-medium">Email Address (To Receive PDF) *</label>
+              <input type="email" name="email" required placeholder="your.name@gmail.com" 
+                     class="w-full bg-bloomberg-input border border-bloomberg-cardBorder rounded px-3.5 py-3 text-sm text-white focus:outline-none focus:border-bloomberg-gold transition font-sans placeholder-slate-500">
+            </div>
+          </div>
+
+          <!-- Pricing & Submission Row -->
+          <div class="pt-4 border-t border-bloomberg-cardBorder/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3.5">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-slate-400">Report Fee:</span>
+                <span class="text-xs text-slate-500 line-through font-mono">₹4,500</span>
+                <span class="text-xl font-bold font-mono text-bloomberg-gold">₹2,500</span>
+                <span class="text-[10px] text-bloomberg-emerald font-mono bg-emerald-950/60 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold">SAVE ₹2,000</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5">Delivered to WhatsApp & Email within 24 Hours.</p>
+            </div>
+
+            <button type="submit" id="submitBtn" class="inline-flex items-center justify-center gap-2 bg-bloomberg-gold hover:bg-bloomberg-goldHover text-black font-bold text-sm uppercase tracking-wider px-6 py-3.5 rounded transition shadow active:scale-95">
+              <span>Submit Request</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Status Message Container -->
+        <div id="formStatus" class="hidden mt-4 p-4 rounded text-xs font-mono"></div>
+
       </div>
+
+      <!-- Zero Calling Guarantee -->
+      <div class="mt-4 text-center px-2">
+        <p class="text-xs text-slate-400 font-sans">
+          🔒 <strong>100% Privacy:</strong> We don't call you or share your details with brokers. Your data is strictly used to deliver your building report.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Footer -->
+  <footer class="bg-bloomberg-dark border-t border-bloomberg-cardBorder py-8 px-4 text-xs text-slate-400">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      
+      <div class="text-center sm:text-left">
+        <div class="flex items-center justify-center sm:justify-start gap-2">
+          <div class="w-5 h-5 rounded bg-bloomberg-card border border-bloomberg-gold/50 flex items-center justify-center font-mono font-bold text-bloomberg-gold text-xs">
+            H
+          </div>
+          <span class="font-bold text-white font-mono">HOMELYTICS</span>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-1">Independent real estate transaction intelligence for homebuyers in Maharashtra.</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 text-xs font-mono">
+        <a href="#specimen-dossier" class="hover:text-bloomberg-gold transition">Sample Report</a>
+        <button onclick="openModal('contactModal')" class="hover:text-bloomberg-gold transition">Contact Us</button>
+        <button onclick="openModal('termsModal')" class="hover:text-bloomberg-gold transition">Terms & Conditions</button>
+      </div>
+
+    </div>
+
+    <div class="max-w-5xl mx-auto mt-6 pt-4 border-t border-bloomberg-cardBorder/60 text-center text-[11px] font-mono text-slate-500">
+      All numbers and names shown in the sample report are dummy data for demonstration. © 2026 Homelytics.
     </div>
   </footer>
 
-  <!-- ================= THANK YOU / CONFIRMATION MODAL ================= -->
-  <div id="thankYouModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-slate-900 shadow-2xl border border-slate-200 transform transition-all scale-95 opacity-0 duration-200" id="modalCard">
-      <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3.5">
-        <i data-lucide="check-circle" class="w-7 h-7"></i>
-      </div>
+  <!-- ========================================== -->
+  <!-- MODALS: Contact Us and Terms & Conditions  -->
+  <!-- ========================================== -->
 
-      <h3 class="text-lg font-bold text-center text-slate-900">Request Dispatched!</h3>
-      <p class="text-xs text-center text-slate-500 mt-1">Our intelligence engine is compiling your custom dossier.</p>
-
-      <div class="mt-4 p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs">
-        <div class="flex justify-between">
-          <span class="text-slate-500">Target Project:</span>
-          <span class="font-bold text-slate-800" id="confirmProject">-</span>
+  <!-- Contact Us Modal -->
+  <div id="contactModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-bloomberg-card border border-bloomberg-cardBorder rounded-lg max-w-md w-full p-5 relative">
+      <button onclick="closeModal('contactModal')" class="absolute top-3 right-3 text-slate-400 hover:text-white font-mono text-xs">✕ CLOSE</button>
+      <h3 class="text-base font-bold text-white font-mono mb-1">Contact Homelytics Desk</h3>
+      <p class="text-xs text-slate-300 mb-4">Have a question about a report or need help with a building query?</p>
+      
+      <div class="space-y-2.5 font-mono text-xs">
+        <div class="p-3 bg-bloomberg-dark rounded border border-bloomberg-cardBorder">
+          <div class="text-[10px] text-bloomberg-muted uppercase">Email Help Desk</div>
+          <div class="text-white font-bold select-all mt-0.5">desk@homelytics.in</div>
         </div>
-        <div class="flex justify-between">
-          <span class="text-slate-500">Configuration:</span>
-          <span class="font-bold text-slate-800" id="confirmConfig">-</span>
+        <div class="p-3 bg-bloomberg-dark rounded border border-bloomberg-cardBorder">
+          <div class="text-[10px] text-bloomberg-muted uppercase">WhatsApp Support</div>
+          <div class="text-bloomberg-gold font-bold select-all mt-0.5">+91 98200 XXXXX</div>
         </div>
-        <div class="flex justify-between">
-          <span class="text-slate-500">Micro-Market:</span>
-          <span class="font-bold text-slate-800" id="confirmLocation">-</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-slate-500">Delivery Channel:</span>
-          <span class="font-bold text-teal-800 flex items-center gap-1">
-            <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-teal-800"></i> WhatsApp
-          </span>
+        <div class="p-3 bg-bloomberg-dark rounded border border-bloomberg-cardBorder">
+          <div class="text-[10px] text-bloomberg-muted uppercase">Report Delivery Time</div>
+          <div class="text-slate-200 mt-0.5">Delivered to WhatsApp & Email within 24 Hours.</div>
         </div>
       </div>
 
-      <div class="mt-3.5 p-3 bg-teal-50 border border-teal-200 rounded-lg text-[11px] text-teal-900 leading-relaxed">
-        <strong>Next Step:</strong> Check your WhatsApp. Our analyst will verify the project records and deliver your 5-page dossier within <strong>45 minutes</strong>.
-      </div>
-
-      <div class="mt-5 flex flex-col gap-2">
-        <a href="homelytics_sample_dummy_report.pdf" download class="w-full py-2.5 px-4 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold transition flex items-center justify-center gap-2">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          Preview Specimen Dossier (PDF)
-        </a>
-        <button onclick="closeThankYouModal()" class="w-full py-2 px-4 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
-          Return to Site
+      <div class="mt-5 text-right">
+        <button onclick="closeModal('contactModal')" class="px-3.5 py-1.5 bg-slate-800 text-slate-200 text-xs rounded font-mono">
+          Close Window
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <!-- Terms & Conditions Modal -->
+  <div id="termsModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-bloomberg-card border border-bloomberg-cardBorder rounded-lg max-w-lg w-full p-5 relative max-h-[85vh] overflow-y-auto custom-scrollbar">
+      <button onclick="closeModal('termsModal')" class="absolute top-3 right-3 text-slate-400 hover:text-white font-mono text-xs">✕ CLOSE</button>
+      <h3 class="text-base font-bold text-white font-mono mb-2">Terms & Conditions</h3>
+      
+      <div class="space-y-3 text-xs text-slate-300 leading-relaxed font-sans">
+        <p>1. <strong>Independent Data:</strong> Homelytics provides pricing and RERA litigation research purely for information and buyer decision support. We do not act as real estate brokers or agents and earn zero commission on your transaction.</p>
+        <p>2. <strong>Delivery SLA:</strong> Reports are dispatched within 24 hours of order confirmation. In rare cases where a new project has zero registered records to benchmark, your fee will be refunded in full.</p>
+        <p>3. <strong>Legal Advisory:</strong> RERA litigations provided in our reports are extracted from official disclosures and public grievance portals. This does not replace a formal title search conducted by a certified lawyer.</p>
+        <p>4. <strong>Zero Broking / Spam Guarantee:</strong> We never share or sell your phone number or email to real estate agents, brokers, or banks.</p>
+        <p>5. <strong>Sample Notice:</strong> Project details and rates shown in the sample report are illustrative dummy metrics used for demonstration.</p>
+      </div>
+
+      <div class="mt-5 text-right">
+        <button onclick="closeModal('termsModal')" class="px-4 py-2 bg-bloomberg-gold text-black font-bold text-xs uppercase tracking-wider rounded font-mono">
+          I Understand
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Tabs, Modals & Form Submission -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Tab switching for sample report
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-b-2', 'border-bloomberg-gold', 'text-bloomberg-gold', 'bg-bloomberg-card');
+        btn.classList.add('text-slate-400');
+      });
 
-    // Target Business WhatsApp Number
-    const DESTINATION_WHATSAPP_NUMBER = "918087273393";
+      const targetPane = document.getElementById(tabId);
+      if (targetPane) targetPane.classList.remove('hidden');
 
-    function handleFormSubmit(event) {
+      const targetBtn = document.getElementById('btn-' + tabId);
+      if (targetBtn) {
+        targetBtn.classList.remove('text-slate-400');
+        targetBtn.classList.add('border-b-2', 'border-bloomberg-gold', 'text-bloomberg-gold', 'bg-bloomberg-card');
+      }
+    }
+
+    // Modal helpers
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[id$="Modal"]:not(.hidden)').forEach(m => m.classList.add('hidden'));
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Lead Capture Handler (Submits to your Google Script Web App URL)
+    const GOOGLE_SCRIPT_WEBAPP_URL = "https://script.google.com/a/macros/thirdschool.cloud/s/AKfycbwsqzmByw6I5xUtOdGcUm5DG-LXCwqAPK6FGcbp46Dwn1itIoM4TY-LZ-v8Ixdl-bJy/exec";
+
+    async function handleFormSubmit(event) {
       event.preventDefault();
+      const form = event.target;
+      const statusDiv = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
 
-      // Retrieve form values
-      const projectName = document.getElementById("projectName").value.trim();
-      const locality = document.getElementById("locality").value.trim();
-      const city = document.getElementById("city").value;
-      const config = document.getElementById("config").value;
-      const carpetArea = document.getElementById("carpetArea").value.trim() || "Standard";
-      const unitSeries = document.getElementById("unitSeries").value.trim() || "Not Specified";
-      const userName = document.getElementById("userName").value.trim();
-      const whatsappNumber = document.getElementById("whatsappNumber").value.trim();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
 
-      // Construct clean, structured WhatsApp message
-      const messageText = 
-        `*NEW HOMELYTICS REPORT REQUEST*\n` +
-        `------------------------------------\n` +
-        `👤 *Buyer Name:* ${userName}\n` +
-        `📱 *WhatsApp:* +91 ${whatsappNumber}\n\n` +
-        `🏢 *Project:* ${projectName}\n` +
-        `📍 *Micro-Market:* ${locality}, ${city}\n` +
-        `📐 *Configuration:* ${config} (${carpetArea} sq ft)\n` +
-        `🔢 *Series / Unit:* ${unitSeries}\n` +
-        `------------------------------------\n` +
-        `Please confirm registered baseline figures & delivery within 45 mins.`;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Saving Request...</span>`;
 
-      // Construct WhatsApp URL
-      const encodedMsg = encodeURIComponent(messageText);
-      const waUrl = `https://wa.me/${DESTINATION_WHATSAPP_NUMBER}?text=${encodedMsg}`;
+      try {
+        if (!GOOGLE_SCRIPT_WEBAPP_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+          await fetch(GOOGLE_SCRIPT_WEBAPP_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData)
+          });
+        } else {
+          // Local demo simulation if script URL is not pasted yet
+          await new Promise(r => setTimeout(r, 600));
+        }
 
-      // Populate confirmation modal content
-      document.getElementById("confirmProject").textContent = projectName;
-      document.getElementById("confirmConfig").textContent = `${config} (${carpetArea} sq ft)`;
-      document.getElementById("confirmLocation").textContent = `${locality}, ${city}`;
+        statusDiv.className = "mt-4 p-4 rounded bg-emerald-950/50 border border-bloomberg-emerald text-emerald-200 font-mono text-xs";
+        statusDiv.innerHTML = `
+          <div class="flex items-start gap-2">
+            <span class="text-bloomberg-emerald text-base font-bold">✓</span>
+            <div>
+              <p class="font-bold text-white uppercase">Request Received Successfully!</p>
+              <p class="mt-1 text-slate-200">Building: <strong class="text-white">${data.projectName}</strong> (${data.configuration})</p>
+              <p class="text-slate-300 mt-1">Our team will compile your 5-page report and deliver it to your WhatsApp (<strong>${data.whatsapp}</strong>) and Email within <strong>24 Hours</strong>.</p>
+            </div>
+          </div>
+        `;
+        statusDiv.classList.remove('hidden');
 
-      // Show Thank You Modal
-      showThankYouModal();
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Request Submitted</span>`;
+        submitBtn.classList.replace('bg-bloomberg-gold', 'bg-emerald-600');
+        submitBtn.classList.replace('text-black', 'text-white');
 
-      // Automatically launch WhatsApp in new tab after 400ms delay
-      setTimeout(() => {
-        window.open(waUrl, "_blank");
-      }, 400);
-    }
-
-    // Modal Control Functions
-    function showThankYouModal() {
-      const modal = document.getElementById("thankYouModal");
-      const card = document.getElementById("modalCard");
-      modal.classList.remove("hidden");
-      setTimeout(() => {
-        card.classList.remove("scale-95", "opacity-0");
-        card.classList.add("scale-100", "opacity-100");
-      }, 10);
-    }
-
-    function closeThankYouModal() {
-      const modal = document.getElementById("thankYouModal");
-      const card = document.getElementById("modalCard");
-      card.classList.remove("scale-100", "opacity-100");
-      card.classList.add("scale-95", "opacity-0");
-      setTimeout(() => modal.classList.add("hidden"), 200);
+      } catch (err) {
+        statusDiv.className = "mt-4 p-4 rounded bg-emerald-950/50 border border-bloomberg-emerald text-emerald-200 font-mono text-xs";
+        statusDiv.innerHTML = `Request received. An analyst will message you on WhatsApp within 24 hours.`;
+        statusDiv.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Submit Request</span>`;
+      }
     }
   </script>
+
 </body>
 </html>
